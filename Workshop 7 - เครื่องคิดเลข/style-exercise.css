@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(254, 248, 241);
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgb(0, 0, 0,0.5);
+}
+
+.cal-display{
+    background-color: black;
+    color: white;
+    /*display: flex;
+    justify-content: flex-end;
+    align-items: center;*/
+    text-align: end;
+    border-radius: 10px 10px 0 0;
+}
+
+.cal-display h1{
+    margin: 0;
+    font-size: 45px;
+    font-weight: bold;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.cal-button{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.equal{
+    grid-column: 4;
+    grid-row: 2/6 ;
+}
+
+button{
+    min-height: 50px;
+    border: 0;
+    background-color: rgb(199, 199, 199,0.8);
+    cursor: pointer;
+    border-radius: 10px ;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover{
+    filter: brightness(110%);
+}
+
+button:active{
+    transform: translateY(2px);
+}
+
+.operator , .equal{
+    background-color: rgb(0, 147, 0,0.8);
+    color: white;
+}
+
+@media screen and (max-width:600px){
+    .calculator{
+        width: 95%;
+    }
+}

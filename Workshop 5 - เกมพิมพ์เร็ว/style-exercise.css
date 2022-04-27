@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+}
+
+body{
+    background-color: #506ccb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+.level-btn{
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.level-btn:active{
+    transform: scale(0.95)
+}
+
+.setting{
+    background-color: #20316b;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(0);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.setting.hide{
+    transform: translateY(-100%);
+}
+
+
+
+select{
+    padding: 5px;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+
+.container{
+    background-color: #20316b;
+    width: 500px;
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0,0.7);
+    color: white;
+    padding: 10px;
+}
+
+h2{
+    background-color: #506ccb;
+    padding: 10px;
+    margin: 20px 20px;
+    font-size: 36px;
+}
+
+#word{
+    margin: 10px auto;
+    color: yellow;
+    font-size: 28px;
+}
+
+input{
+    width: 50%;
+    text-align: center;
+    border: 0;
+    outline: none;
+    padding: 15px;
+    font-size: 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.time{
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    font-size: 20px;
+    color: red;
+}
+
+.score{
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    font-size: 20px;
+    color: yellowgreen;
+}
+
+.gameover{
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-reload{
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn-reload:active{
+    transform: scale(0.95);    
+}
+
+.p-finish{
+    font-size: 18px;
+}

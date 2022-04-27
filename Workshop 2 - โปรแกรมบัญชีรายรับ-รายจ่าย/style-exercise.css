@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+:root{
+    --box-shadow:0 1px 5px rgba(0,0,0,0.12)
+}
+*{
+    font-family: 'Itim', cursive;
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 40px;
+}
+
+.income-expense-container{
+    box-shadow: var(--box-shadow);
+}
+#money-plus{
+    color: rgba(2, 124, 2, 1);
+    font-size: 22px;
+}
+#money-minus{
+    color: red;
+    font-size: 22px;
+}
+.income-expense-container div:first-of-type{
+    border-right: 1px solid #dedede;
+}
+#history{
+    border-bottom: 1px solid #dedede;
+}
+#create_history{
+    border-bottom: 1px solid #dedede;
+}
+#btn{
+    box-shadow: var(--box-shadow);
+}
+ul li{
+    list-style: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    border: 1px solid #dedede;
+    padding: 5px 10px 5px; 
+    margin: 7px 0;
+    position: relative;
+}
+ul li.plus{
+    border-right: 6px solid rgba(2, 124, 2, 1);
+}
+ul li.minus{
+    border-right: 6px solid red;
+}
+
+.btn-create{
+    height: 35px;
+    width: 25px;
+    border: 0;
+    background-color: rgb(255, 2, 2,0.8);
+    color:white;
+    position:absolute;
+    top: 4px;
+    left: 0;
+    transform: translate(-100%,0);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+.btn-create:hover{
+    opacity:1
+}

@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+}
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+img{
+    width: 100%;
+    max-width: 700px;
+}
+
+h2{
+    text-align: center;
+}
+
+.text {
+    opacity: 0;
+    transform: translateY(15px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.text.show_reveal{
+    opacity: 1;
+    transform: translateY(0px);;
+}

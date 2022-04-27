@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมส์พิมให้เร็วน้าาาาาาาา</title>
+    <script src="https://kit.fontawesome.com/70e1721a75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style-exercise.css">
+</head>
+<body>
+    <button id="level-btn" class="level-btn">
+        <i class="fa-solid fa-gamepad"></i>
+    </button>
+    <div class="setting" id="setting">
+        <form id="level-form">
+            <label >ระดับความยาก:</label>
+            <select id="level">
+                <option value="easy">ง่าย</option>
+                <option value="medium">ปานกลาง</option>
+                <option value="hard">ยาก</option>
+            </select>
+        </form>
+    </div>
+    <div class="container">
+        <h2>เกมพิมพ์เร็ว</h2>
+        <h1 id="word">เศรษฐี</h1>
+        <!-- autocomplete ปรับให้ไม่มีตัวช่วยในการสะกด-->
+        <input type="text" id="text-word" autocomplete="off" placeholder="ป้อนคำให้เร็ว">
+        <p class="time">
+            <span id="time"></span>
+        </p>
+        <p class="score">
+            <span id="score"></span>    
+        </p>
+        <div class="gameover" id="gameover">
+            <p>เกมส์จบแล้วววววว</p>
+        </div>
+    </div> 
+    <script src="script-exercise.js"></script>
+</body>
+</html>

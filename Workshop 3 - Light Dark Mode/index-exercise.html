@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light Mode dark Mode</title>
+    <link rel="stylesheet" href="style-exercise.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/70e1721a75.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm fixed-top p-3">
+        <div class="container-fluid justify-content-between">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="index-exercise.html" class="nav-link fw-bold">หน้าแรก</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#work" class="nav-link fw-bold">ผลงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link fw-bold">ติดต่อเรา</a>
+                </li>
+            </ul>
+            <div class="form-check form-switch" id="text-toggler">
+                <input class="form-check-input me-3" type="checkbox" id="mySwitch" name="darkmode" value="yes">
+                <label class="form-check-label  fw-bold ">Light Mode</label>
+                <i class="fa-solid fa-sun"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="d-flex align-items-center mb-5">
+        <div class="container-fluid">
+            <div class="title-group text-center py-3">
+                <h1 class="display-1 fw-bold">คะน้า หล่อ เรียนดี กีฬาเด่น ขยันทำงาน</h1>
+                <h2>ผมพยายามมากกว่าที่คุณคิด</h2>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mt-5 d-flex align-items-center" id="work">
+        <div class="container">
+            <h1 class="text-center mb-5 display-1 fw-bold">ผลงานด้านต่างๆ</h1>
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><h3 class="text-center mt-2 ">เขียนโปรแกรม</h3></div>
+                        <div class="card-body">
+                            <img src="img/undraw_Freelancer_light.svg" alt="" class="img-fluid" id="img-color1"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 allcard">
+                        <div class="card-header" ><h3 class="text-center mt-2 ">เล่นเกมส์</h3></div>
+                        <div class="card-body">
+                            <img src="img/undraw_Projections_light.svg" alt="" class="img-fluid" id="img-color2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header"><h3 class="text-center mt-2 ">ตากน้ำฝน</h3></div>
+                        <div class="card-body">
+                            <img src="img/undraw_Raining_light.svg" alt="" class="img-fluid" id="img-color3">    
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mt-5 d-flex align-items-center " id="contact">
+        <div class="container text-center">
+            <i class="fa-solid fa-face-grin emoji mx-4"></i>
+            <i class="fa-solid fa-face-angry emoji mx-4"></i>
+            <i class="fa-solid fa-face-grin-hearts emoji mx-4"></i>
+            <i class="fa-solid fa-face-grin-stars emoji mx-4"></i>
+            <i class="fa-solid fa-face-kiss-wink-heart emoji mx-4"></i>
+
+        </div>
+    </section>
+    
+    
+    <script src="script-exercise.js"></script>
+</body>
+</html>
