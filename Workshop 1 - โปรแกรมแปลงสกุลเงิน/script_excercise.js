@@ -21,6 +21,7 @@ function Update_info(){
     //console.log(money2)
     fetch(`https://api.exchangerate-api.com/v4/latest/${money1}`)
     .then(response=> response.json()).then(data=>{
+        
         //console.log(data.rates[`${money2}`])
         const rate_result = `${data.rates[`${money2}`]}`
         rate_text.innerText = `1 ${money1} = ${rate_result} ${money2} `
