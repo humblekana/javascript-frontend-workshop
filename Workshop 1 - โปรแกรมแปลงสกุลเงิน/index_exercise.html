@@ -5,20 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>โปรแกรมการแปลงสกุลเงิน</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <script src="../../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <style>
         *{
             box-sizing: border-box;
             font-family: 'Itim', cursive;
-        }
-        .container{
-            height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
         #bt-swap{
             box-shadow: 2px 2px 5px black;
@@ -28,6 +21,7 @@
         }
         
     </style>
+    
 </head>
 <body>
         <div class="container text-center my-5 ">
@@ -90,12 +84,12 @@
                 </select>
                 <input type="number" name="" id="amount-one" value="0" class="form-control text-end fs-3" min="0">
             </div>
-            <div class="row mt-4 w-100 align-items-center" id="swap-currency">
-                <div class="col-sm-6 ">
+            <div class="row mt-4" id="swap-currency">
+                <div class="col-sm-6 align-self-center">
                     <button class="btn btn-success btn-lg" id="bt-swap">สลับสกุลเงิน</button>
                 </div>
-                <div class="col-sm-6 mt-3">
-                    <p class="fs-3" id="rate">แสดงอัตราการแลกเปลี่ยน</p>
+                <div class="col-sm-6 ">
+                    <p class="fs-3 pt-3" id="rate">แสดงอัตราการแลกเปลี่ยน</p>
                 </div>
             </div>
             <div class="input-group mt-3 input-group-lg">
@@ -157,10 +151,5 @@
             </div>
         </div>
         <script src="script_excercise.js"></script>
-    
-    
-        
-            
-    
-</body>
+    </body>
 </html>
