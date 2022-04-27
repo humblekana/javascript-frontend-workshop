@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>โปรแกรมบัญชีรายรับรายจ่าย</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="style-exercise.css">
-    <script src="../../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
 
 </head>
-<body>
-    <div class="container d-flex flex-column align-items-center justify-content-center">
+<body class="">
+    <div class="container box">
         <!-- ส่วนหัวโปรแกรม -->
-        <h2 class="mb-5 ">โปรแกรมบัญชีรายรับรายจ่าย</h2>
+        <h1 class="mb-5 mt-5">โปรแกรมบัญชีรายรับรายจ่าย</h1>
         
         <!-- แสดงยอดคงเหลือ -->
-        <h4 class=" w-50">ยอดคงเหลือ (บาท)</h4>
+        <h4 class="w-50">ยอดคงเหลือ (บาท)</h4>
         <h1 id="balance" class="w-50 mb-4">฿0.00</h1>
         
         <!-- ยอดรายรับ และรายจ่าย -->
-        <div class="income-expense-container row w-50 ">
+        <div class="income-expense-container row w-50">
             <!-- รายรับ -->
             <div class="col-sm-6 bg-white text-center">
                 <h4 class="pt-3">รายรับ</h4>
@@ -33,7 +33,7 @@
             </div>
         </div>
         
-        <!-- ประวัติธุรกรรม -->
+        <!-- ประวัติรายการ -->
         <h3 class="mt-5 w-50 pb-2" id="history">ประวัติรายการ</h3>
         <ul class="list list-group w-50" id="list">
             <!--<li class="plus">จ่ายค่ารถ <span>-400 บาท </span>
@@ -44,10 +44,10 @@
             </li>  -->
         </ul>
         
-        <!-- เพิ่มธุรกรรม -->
+        <!-- เพิ่มรายการ -->
         <h3 class="mt-4 w-50 pb-2" id="history">เพิ่มรายการ</h3>
         <form class="w-50" id="form">
-            <!-- ชื่อธุรกรรม -->
+            <!-- ชื่อรายการ -->
             <div class="mt-1">
                 <label for="" class="form-label fs-4">ชื่อรายการ</label>
                 <input class="form-control w-100 fs-4" type="text" placeholder="ระบุชื่อรายการ" id="text">
@@ -58,7 +58,7 @@
                 (+ คือรายรับ,- คือรายจ่าย)</label>
                 <input class="form-control w-100 fs-4" type="text" placeholder="ระบุจำนวนเงิน" id="amount">
             </div>    
-            <!-- ปุ่มเพิ่มธุรกรรม  -->
+            <!-- ปุ่มเพิ่มรายการ  -->
             <button type="submit" class="btn btn-success my-3 w-100 fs-4" id="btn-submit">เพิ่มรายการ</button>
         </form>
     </div>
