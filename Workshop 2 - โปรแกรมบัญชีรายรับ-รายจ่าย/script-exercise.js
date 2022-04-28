@@ -29,7 +29,8 @@ function addDatalist(info){
     const class_status = info.amount > 0 ? "plus" : "minus"
     item.innerHTML = `${info.text} <span> ${mark} ${formatNumber(Math.abs(info.amount))} บาท </span>
     <button class="btn-create" onclick="deleteData(${info.id})">X</button>`
-    item.setAttribute("class",class_status)
+    item.className = class_status
+    //item.setAttribute("class",class_status)
     //item.classList.add(class_status)
     list.appendChild(item)
 }
@@ -63,7 +64,7 @@ function id_generate(){
 function addOrder(event){
     // การทำไม่ให้หน้าเว็บ reset
     event.preventDefault();
-    console.log(event)
+    console.log(event.target)
     //เช็คว่าใส่ข้อมูลครบไหม เป็นจำนวนที่คำนวณได้ไหม
     if (text.value.trim() == '' || amount.value.trim() == ''){
         alert("โปรดใส่ข้อมูลให้ครบถ้วน");
