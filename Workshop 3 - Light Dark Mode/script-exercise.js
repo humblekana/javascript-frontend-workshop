@@ -14,10 +14,9 @@ function setMode(){
         change_picture("dark")
     }else{
         lightMode()
-        document.documentElement.setAttribute('data-theme','light');
+        document.documentElement.removeAttribute("data-theme")
         change_picture("light")
     }
-    
 }
 
 function darkMode(){
