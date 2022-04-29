@@ -30,7 +30,7 @@ body{
 }
 
 .cal-display h1{
-    margin: 0;
+    margin: 0 auto;
     font-size: 45px;
     font-weight: bold;
     padding: 20px;
