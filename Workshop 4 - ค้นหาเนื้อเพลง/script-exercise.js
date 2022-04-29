@@ -4,8 +4,8 @@ const result = document.getElementById("result");
 const paylist = document.getElementById("paylist");
 
 const apiURL = "https://api.lyrics.ovh";
-form.addEventListener("submit",e=>{
-    e.preventDefault();
+form.addEventListener("submit",event=>{
+    event.preventDefault();
     //ทำการป้อนชื่อเพลง
     const songName = search.value.trim();
     
@@ -27,6 +27,7 @@ async function searchLyrics(song){
 
 function displayData(data_list){
     //temp ทำการเลือกข้อมูลมาแสดง โดยได้กลับมาเป็นอเร จากนั้นต้องแปลงเป็นstring
+    //console.log(data_list)
     const temp = data_list.data.map(e=>{
         return  `<li>
                     <span><strong>${e.artist.name}</strong> -${e.title}</span>
@@ -35,7 +36,7 @@ function displayData(data_list){
     });
     // นำมาแสดงใน result
     result.innerHTML = `<ul class = "songs"> 
-        ${temp.join("")}
+        ${temp.join(" ")}
     </ul>`
     // data_list.next || data_list.prev เป็นรายการเพลงก่อนหน้า และ รายการต่อไป เช็คว่าถ้ามี ก็ให้มีปุ่มแสดงขึ้นมา
     if (data_list.next || data_list.prev){
@@ -57,21 +58,19 @@ async function getSongs(songUrl){
     displayData(data);
 }
 
-result.addEventListener("click",e=>{
-    // ใน result มีปุ่มหลายปุ่ม e.target เพื่อหาว่าปุ่มไหนกด
-    const click_target = e.target;
+result.addEventListener("click",event=>{
+    // ใน result มีปุ่มหลายปุ่ม event.target เพื่อหาว่าปุ่มไหนกด
+    const click_target = event.target;
     
-    /*เช็คว่าเป็น tag button ไหม สำคัญ!!! ตัวใหญ่ จะไม่ใส่ก็ได้
+    //เช็คว่าเป็น tag button ไหม สำคัญ!!! ตัวใหญ่ จะไม่ใส่ก็ได้
+    console.log(click_target.tagName=="BUTTON")
     if (click_target.tagName=="BUTTON"){
         const data_artist = click_target.getAttribute("data-artist")
         const data_song = click_target.getAttribute("data-song")
-        console.log(data_artist,data_song)
-    }*/
+        //console.log(data_artist,data_song)
+        dispayContent(data_artist,data_song)
+    }
     
-    // xxx.getAttribute ทำการดึงข้อมูลจาก Attribute มาใช้
-    const data_artist = click_target.getAttribute("data-artist")
-    const data_song = click_target.getAttribute("data-song")
-    dispayContent(data_artist,data_song)
 })
 
 //ฟังชันเพื่อทำการแสดงเนื้อเพลง
@@ -79,7 +78,7 @@ async function dispayContent(data_artist,data_song){
     const response = await fetch(`${apiURL}/v1/${data_artist}/${data_song}`);
     const data = await response.json();
     // เป็นการเปลี่ยนพวกช่องว่าง แท็บ ให้เป็นเว้นบรรทัด
-    const contents = data.lyrics.replace(/(\r\n|\r|\n)/g,"<br>");
+    const contents = data.lyrics.replace(/(\r\n|\r|\n)/ig,"<br>");
     //เช็คว่ามีเนื้อหาเพลงไหม ถ้ามีนำมาแสดง 
     if (contents){
         result.innerHTML = `<h2><span><strong>${data_artist}</strong> -${data_song}</span></h2>
