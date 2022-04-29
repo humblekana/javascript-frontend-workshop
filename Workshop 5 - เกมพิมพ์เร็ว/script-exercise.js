@@ -9,13 +9,14 @@ const level_formEl = document.getElementById("level-form");
 const levelEl = document.getElementById("level");
 const gameoverEl = document.getElementById("gameover");
 
-const words = ["หมาป่า","แมวน้ำ","สิงโต","นกกาเหว่า","จิงโจ้","คิงคอง"];
+const words = ["หมาป่า","แมวน้ำ","สิงโต","นกพิราบ","จิงโจ้","คิงคอง","ลิง","ปลาดุก"];
 
 // ตัวแปรเก็บค่าต่างๆ 
 let randomWord;
 let score=0;
 let time=10;
-let level='medium';
+let level;
+let temp_randomWord = parseInt(Math.random()*words.length);
 //ตัวแปรเริ่มนับเวลา
 let timeInterval;
 //ทำการดึงค่าจากโหมด ใน localStorage มาใช้
@@ -23,7 +24,12 @@ const saveMode=localStorage.getItem('mode') !== null ? localStorage.getItem('mod
 
 //ฟังชันสุ่มค่า word
 function getRandonword(){
-    return words[parseInt(Math.random()*words.length)];
+    let result_word = parseInt(Math.random()*words.length)
+    while(result_word == temp_randomWord){
+        result_word = parseInt(Math.random()*words.length)
+    }
+    temp_randomWord = result_word
+    return words[result_word];
 }
 
 // ฟังชันแสดงผล หลังจากสุ่ม
@@ -61,6 +67,7 @@ function gameOver(){
 //เริ่มต้นเรียกเพื่อแสดงผล ว่าอยู่ในโหมดอะไร ง่าย ปานกลาง ยาก
 function startGame(){
     levelEl.value=saveMode;
+    //console.log(levelEl.selectedIndex)
     if(saveMode == 'easy'){
         time=15;
     }else if(saveMode == 'medium'){
@@ -71,11 +78,11 @@ function startGame(){
     displayWord();
 }
 
-text_wordEl.addEventListener("input",(e)=>{
-    //console.log(e.target.value) ใช้เป็นแบบนี้ก็ได้
+text_wordEl.addEventListener("input",(event)=>{
+    //console.log(event.target.value) ใช้เป็นแบบนี้ก็ได้
     const temp_text = text_wordEl.value
     //นำค่าที่ได้มาเปรียบเทียบกับ word ว่าตรงกันไหม
-    if(temp_text.trim() === randomWord){
+    if(temp_text.trim() == randomWord){
         if(saveMode == 'easy'){
             time+=5;
         }else if(saveMode == 'medium'){
@@ -97,12 +104,15 @@ btn_levelEl.addEventListener("click",()=>{
 levelEl.addEventListener("change",(event)=>{
     level = event.target.value;
     //เซ็ตไอเท็มลงใน storage คีย์คือ mode 
+    //console.log(event.target.value)
     localStorage.setItem("mode",level)
 })
 
 //เริ่มนับเวลาเมื่อนำเมาส์ไปวางบน input -> focus 
-text_wordEl.addEventListener("focus",()=>{
+text_wordEl.addEventListener("focus",(event)=>{
+    //console.log(event.target)
     //ฟังชันนับเวลา setInterval(function,time(ms))
+    wordEl.style.opacity = "1"
     timeInterval = setInterval(updateTime,1000)
 })
 
