@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/70e1721a75.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="myweb.html" class="navbar-brand">Kana</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar1" class="collapse navbar-collapse ">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-2"><a href="myweb.html" class="nav-link">หน้าแรก</a></li>
+                    <li class="nav-item mx-2"><a href="#about" class="nav-link">เกี่ยวกับเรา</a></li>
+                    <li class="nav-item mx-2"><a href="#gallary" class="nav-link">ผลงานของเรา</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" data-bs-target="#mymodal" data-bs-toggle="modal">
+                        ติดต่องาน
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- picture carousel  -->
+    <section id="slider">
+        <div class="carousel slide" data-bs-ride="carousel" id="myslider">
+            <ol class="carousel-indicators">
+                <button data-bs-target="#myslider" data-bs-slide-to="0" class="active"></button>
+                <button data-bs-target="#myslider" data-bs-slide-to="1" ></button>
+                <button data-bs-target="#myslider" data-bs-slide-to="2" ></button>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h1 class="display-3">แมว 1</h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, iure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-2">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h1 class="display-3">แมว 2</h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, iure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image-3">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h1 class="display-3">แมว 3</h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, iure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-target="#myslider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>    
+            </button>
+            <button class="carousel-control-next" data-bs-target="#myslider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>    
+            </button>
+        </div> 
+    </section>
+    
+    <!-- service -->
+    <section id="service" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fa-solid fa-person mb-3"></i>
+                    <h3>ไกด์นำเที่ยว</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, ratione.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fa-solid fa-camera mb-3"></i>
+                    <h3>รับถ่ายรูปภาพ</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, ratione.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fa-solid fa-pen-nib mb-3"></i>
+                    <h3>ตกแต่งรูปภาพ</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, ratione.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- about -->
+    <section id="about" class="p-5">
+        <div class="dark-overlay">
+            <div class="row">
+                <div class="col">
+                    <div class="container pt-5">
+                        <h1>เกี่ยวกับเรา</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque, at odit nostrum exercitationem sint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gallary  -->
+    <section id="gallary" class="p-5">
+        <div class="container">
+            <h1 class="text-center">ผลงานของเรา</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolores blanditiis possimus placeat non qui?</p>
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid rounded-circle"> 
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404__340.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- footer -->
+    <footer class="text-center text-white bg-black">
+        <div class="container">
+            <div class="row" style="height: 150px;">
+                <div class="col align-self-center">
+                    <p class="h3">Copyright 2030 Sukachathum Seawsiritaworn</p>    
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- modal -->
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>แบบสอบถาม</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div>
+                            <label for="" class="form-label">อีเมลล์</label>
+                            <input type="email" class="form-control" placeholder="ป้อนอีเมลล์ของคุณ">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">หัวข้องาน</label>
+                            <input type="text" class="form-control" placeholder="ป้อนหัวข้องานของคุณ">
+                        </div>
+                        <div>
+                            <label for="" class="form-label">รายละเอียด</label>
+                            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                    <input type="submit" value="ส่งข้อมูล" class="btn btn-success">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

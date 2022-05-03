@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic layout</title>
+    <style>
+        #b1{grid-column: 1/span 6;}
+        #b2{grid-row: 2/span 2;}
+        #b3{grid-column: 2/span 3;}
+        #b4{grid-column: 5/span 2;}
+        #b5{grid-column: 2/span 5;}
+        *{
+            box-sizing: border-box;
+        }
+        .grid-container{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            gap: 10px;
+        }
+        .box{
+            border: 1px solid black;
+            background-color: rgb(249, 190, 190);
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        @media only screen and (max-width: 800px) {
+            .grid-container{
+                display: block;
+            }    
+        }
+   </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="box" id="b1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint modi ratione facilis earum deserunt est laudantium eum hic vero! Ratione tenetur placeat deserunt, magnam dignissimos excepturi earum architecto. Itaque quod dicta est mollitia recusandae animi velit molestias distinctio dolore delectus! Doloribus error natus odio sint consequatur eveniet tenetur deleniti, hic, nihil ea tempore at, consectetur rem dignissimos. Soluta sed magnam et, vero cum eligendi dolore possimus quo beatae explicabo nostrum deserunt minima voluptatem amet quibusdam ullam dicta veniam culpa esse, praesentium eius ipsum ad! Dolorem beatae esse assumenda corrupti omnis unde ipsum error, quam non voluptates illo neque natus?</p>
+        </div>
+        <div class="box" id="b2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint modi ratione facilis earum deserunt est laudantium eum hic vero! Ratione tenetur placeat deserunt, magnam dignissimos excepturi earum architecto. Itaque quod dicta est mollitia recusandae animi velit molestias distinctio dolore delectus! Doloribus error natus odio sint consequatur eveniet tenetur deleniti, hic, nihil ea tempore at, consectetur rem dignissimos. Soluta sed magnam et, vero cum eligendi dolore possimus quo beatae explicabo nostrum deserunt minima voluptatem amet quibusdam ullam dicta veniam culpa esse, praesentium eius ipsum ad! Dolorem beatae esse assumenda corrupti omnis unde ipsum error, quam non voluptates illo neque natus?</p>
+        </div>
+        <div class="box" id="b3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint modi ratione facilis earum deserunt est laudantium eum hic vero! Ratione tenetur placeat deserunt, magnam dignissimos excepturi earum architecto. Itaque quod dicta est mollitia recusandae animi velit molestias distinctio dolore delectus! Doloribus error natus odio sint consequatur eveniet tenetur deleniti, hic, nihil ea tempore at, consectetur rem dignissimos. Soluta sed magnam et, vero cum eligendi dolore possimus quo beatae explicabo nostrum deserunt minima voluptatem amet quibusdam ullam dicta veniam culpa esse, praesentium eius ipsum ad! Dolorem beatae esse assumenda corrupti omnis unde ipsum error, quam non voluptates illo neque natus?</p></div>
+        <div class="box" id="b4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint modi ratione facilis earum deserunt est laudantium eum hic vero! Ratione tenetur placeat deserunt, magnam dignissimos excepturi earum architecto. Itaque quod dicta est mollitia recusandae animi velit molestias distinctio dolore delectus! Doloribus error natus odio sint consequatur eveniet tenetur deleniti, hic, nihil ea tempore at, consectetur rem dignissimos. Soluta sed magnam et, vero cum eligendi dolore possimus quo beatae explicabo nostrum deserunt minima voluptatem amet quibusdam ullam dicta veniam culpa esse, praesentium eius ipsum ad! Dolorem beatae esse assumenda corrupti omnis unde ipsum error, quam non voluptates illo neque natus?</p>
+        </div>
+        <div class="box" id="b5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sint modi ratione facilis earum deserunt est laudantium eum hic vero! Ratione tenetur placeat deserunt, magnam dignissimos excepturi earum architecto. Itaque quod dicta est mollitia recusandae animi velit molestias distinctio dolore delectus! Doloribus error natus odio sint consequatur eveniet tenetur deleniti, hic, nihil ea tempore at, consectetur rem dignissimos. Soluta sed magnam et, vero cum eligendi dolore possimus quo beatae explicabo nostrum deserunt minima voluptatem amet quibusdam ullam dicta veniam culpa esse, praesentium eius ipsum ad! Dolorem beatae esse assumenda corrupti omnis unde ipsum error, quam non voluptates illo neque natus?</p>
+        </div>
+        
+    </div>
+</body>
+</html>

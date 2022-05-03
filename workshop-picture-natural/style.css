@@ -1,0 +1,15 @@
+*{
+    font-family: 'Itim', cursive;
+}
+
+nav{
+    height: 75px;
+    background-color: #a0a0a2;
+}
+.brand{
+    color: black;
+    text-shadow: 5px 5px 10px whitesmoke;
+}
+.card-shadow{
+    box-shadow: 0px 3px 10px black;
+}
