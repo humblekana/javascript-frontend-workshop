@@ -17,7 +17,7 @@ let score=0;
 let time=10;
 let level;
 let temp_randomWord = parseInt(Math.random()*words.length);
-//ตัวแปรเริ่มนับเวลา
+//ตัวแปรเริ่มนับเวลา 
 let timeInterval;
 //ทำการดึงค่าจากโหมด ใน localStorage มาใช้
 const saveMode=localStorage.getItem('mode') !== null ? localStorage.getItem('mode') : 'medium';
