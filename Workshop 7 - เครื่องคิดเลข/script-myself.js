@@ -31,26 +31,25 @@ function seteqal(){
     }
     temp_result = temp_result.replace(/x/ig,"*")
     temp_result = temp_result.replace(/\÷/ig,'\/')
-    console.log(temp_result[temp_result.search(/[\.\+\-\*\/]/ig)+1])
+    //console.log(temp_result[temp_result.search(/[\.\+\-\*\/]/ig)+1])
     if (temp_result[temp_result.search(/[\.\+\-\*\/]/ig)+1] == undefined){
         DisplayEl.innerText = "error"
         checkError = true
         return   
     }
+    //console.log(temp_result[temp_result.search(/[\.\+\-\*\/]/ig)-1])
+    //console.log(temp_result[temp_result.search(/[\.\+\-\*\/]/ig)])
     if (temp_result[temp_result.search(/[\.\+\-\*\/]/ig)-1]==undefined && (temp_result[temp_result.search(/[\.\+\-\*\/]/ig)] == "*" || temp_result[temp_result.search(/[\.\+\-\*\/]/ig)] == "/")){
         DisplayEl.innerText = "error"
         checkError = true
         return    
     }
     check_op = /\.([\.\+\-\*\/]){1,}|\+([\.\+\-\*\/]){1,}|\-([\.\+\-\*\/]){1,}|\*([\.\+\-\*\/]){1,}|\/([\.\+\-\*\/]){1,}/ig
-    console.log(temp_result.search(check_op) != -1,firstNum==false)
-    if(temp_result.search(check_op) != -1 || firstNum == false){
-        //console.log("11111")
+    if(temp_result.search(check_op) != -1 || firstNum == false ){
         DisplayEl.innerText = "error"
         checkError = true
     }else{
-        //console.log("2222")
-        let result = eval(temp_result)
+       let result = eval(temp_result)
         temp_result = `${result}`
         DisplayEl.innerText = temp_result    
     }
@@ -62,6 +61,7 @@ function setdecimal(dot){
     temp_result+=dot
     DisplayEl.innerText = temp_result
 }
+
 //เข้าถึงปุ่มทั้ง 17 ปุ่ม แล้วดูว่าเป็น operand || operator
 inputBtn.forEach(input=>{
     //console.log(input.classList.length)
