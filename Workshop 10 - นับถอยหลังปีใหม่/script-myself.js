@@ -23,7 +23,7 @@ const countTime = setInterval(()=>{
     console.log(distance)
     const day_count = Math.floor(distance/get_day)
     let temp = distance%get_day
-    const hour_count = Math.floor((temp)/get_hour)
+    const hour_count = Math.floor(temp/get_hour)
     temp = temp%get_hour
     const minute_count = Math.floor(temp/get_minute)
     temp = temp%get_minute
