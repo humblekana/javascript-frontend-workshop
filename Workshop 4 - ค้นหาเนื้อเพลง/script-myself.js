@@ -27,13 +27,14 @@ async function searchLyrics(song){
 
 function displayData(data_list){
     //temp ทำการเลือกข้อมูลมาแสดง โดยได้กลับมาเป็นอเร จากนั้นต้องแปลงเป็นstring
-    //console.log(data_list)
+    //console.log(data_list.data)
     const temp = data_list.data.map(e=>{
         return  `<li>
                     <span><strong>${e.artist.name}</strong> -${e.title}</span>
                     <button class="btn" data-artist="${e.artist.name}" data-song="${e.title}">เนื้อเพลง</button> 
                 </li>`
     });
+    //console.log(temp)
     // นำมาแสดงใน result
     result.innerHTML = `<ul class = "songs"> 
         ${temp.join(" ")}
@@ -63,7 +64,7 @@ result.addEventListener("click",event=>{
     const click_target = event.target;
     
     //เช็คว่าเป็น tag button ไหม สำคัญ!!! ตัวใหญ่ จะไม่ใส่ก็ได้
-    console.log(click_target.tagName=="BUTTON")
+    //console.log(click_target.tagName=="BUTTON")
     if (click_target.tagName=="BUTTON"){
         const data_artist = click_target.getAttribute("data-artist")
         const data_song = click_target.getAttribute("data-song")
@@ -78,7 +79,7 @@ async function dispayContent(data_artist,data_song){
     const response = await fetch(`${apiURL}/v1/${data_artist}/${data_song}`);
     const data = await response.json();
     // เป็นการเปลี่ยนพวกช่องว่าง แท็บ ให้เป็นเว้นบรรทัด
-    const contents = data.lyrics.replace(/(\r\n|\r|\n)/ig,"<br>");
+    const contents = data.lyrics.replace(/\n/ig,"<br>");
     //เช็คว่ามีเนื้อหาเพลงไหม ถ้ามีนำมาแสดง 
     if (contents){
         result.innerHTML = `<h2><span><strong>${data_artist}</strong> -${data_song}</span></h2>
