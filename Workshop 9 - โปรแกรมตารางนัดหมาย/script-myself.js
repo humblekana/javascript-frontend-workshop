@@ -26,8 +26,8 @@ const get_day = 1000*60*60*24
 
 formEl.addEventListener("submit",(event)=>{
     event.preventDefault()
-    //console.log(titleEl.value)
-    //console.log(dateEl.value)
+    console.log(titleEl.value)
+    console.log(dateEl.value)
     
     //ทำการเก็บค่าจากแบบฟอร์มมาใส่
     Title_info = titleEl.value
@@ -121,7 +121,6 @@ countdown_cancelEl.addEventListener("click",()=>{
     Date_info = ""
     titleEl.value = ""
     dateEl.value = ""
-    
 })
 
 //เมื่อกดปุ่มสร้างรายการใหม่ให้ลบข้อมูลใน localStorage และเคลียค่าทุกอย่าง เวลา ข้อมูลวัน ข้อมูลรายการ
@@ -137,5 +136,5 @@ create_newtargetEl.addEventListener("click",()=>{
     dateEl.value = ""
     
 })
-
+//เรียกฟังชันก์เช็คว่าใน localStorage มีค่าอยู่ไหม
 getMemoryData()
