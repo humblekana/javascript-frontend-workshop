@@ -36,7 +36,7 @@ function lightMode(){
 }
 
 function change_picture(info){
-    //tag img เปลี่ยนรูปด้วยการ xxx.img
+    //tag img เปลี่ยนรูปด้วยการ xxx.src
     img_color1.src=`img/undraw_Freelancer_${info}.svg`;
     img_color2.src=`img/undraw_Projections_${info}.svg`;
     img_color3.src=`img/undraw_Raining_${info}.svg`;
