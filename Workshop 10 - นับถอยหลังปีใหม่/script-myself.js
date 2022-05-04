@@ -12,7 +12,6 @@ const get_day = 1000*60*60*24
 
 //วันเกิด
 const HBD = new Date("2022-10-5 00:00:00").getTime()
-//console.log(currentTime)
 //console.log(HBD)
 
 const countTime = setInterval(()=>{
@@ -20,7 +19,7 @@ const countTime = setInterval(()=>{
     const currentTime = new Date().getTime()
     //ผลต่างเวลา = วันเกิด - เวลาปัจจุบัน
     let distance =  HBD - currentTime
-    console.log(distance)
+    //console.log(distance)
     const day_count = Math.floor(distance/get_day)
     let temp = distance%get_day
     const hour_count = Math.floor(temp/get_hour)
