@@ -7,6 +7,13 @@ const password2El = document.getElementById("password-confirm")
 
 formEl.addEventListener("submit",(event)=>{
     event.preventDefault()
+    /*console.log(event.target)
+    console.log(event.target[0])
+    console.log(event.target[1])
+    console.log(event.target[2])
+    console.log(event.target[3])
+    console.log(event.target[4])*/
+    
     // ตัวแปรไว้ใช้แสดงข้อมูล
     const formControl1 = usernameEl.parentElement
     const smallEl1 = formControl1.children[2]
