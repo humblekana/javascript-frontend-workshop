@@ -10,7 +10,7 @@ const imgEl = document.getElementById("img")
 
 /* ข้อมูลชื่อเพลง */
 const songs_Data = ["Contra","HavestMoon","Mario"]
-let index_song = 2
+let index_song = 0
 
 /* เปลี่ยนแปลงชื่อเพลง รูปเพลง เสียงเพลง */
 function loadSongs(song){
@@ -40,7 +40,7 @@ function pauseSong(){
 // กดปุ่มเมื่อจะเล่น กดปุ่มเมื่อจะหยุด
 playBtnEl.addEventListener("click",(event)=>{
     const isPlay = music_containerEl.classList.contains("play")
-    //console.log(isPlay)
+    console.log(isPlay)
     if (isPlay){
         pauseSong()
     }else{
@@ -71,7 +71,7 @@ nextBtnEl.addEventListener("click",()=>{
 //event timeupdate เป็นการดักจับ เวลาเมื่อเล่นเพลงไปเรื่อยๆ
 audioEl.addEventListener("timeupdate",(event)=>{
     // currentTime เวลาปัจจุบันของเพลง
-    // AllTime เวลาทั้งหมดของเพลง
+    // AllTime เวลาทั้งหมดของเพลง 
     const CurrentTime = event.target.currentTime
     const AllTime = event.target.duration
     //console.log(CurrentTime)
@@ -85,7 +85,8 @@ audioEl.addEventListener("timeupdate",(event)=>{
 progress_containerEl.addEventListener("click",(event)=>{
     //event.target.clientWidth ความยาวของ progress
     //event.offsetX ความยาวที่ณ ตำแหน่งที่เรากด
-    //console.log(event.target.clientWidth)
+    //หรือจะใช้ก็ได้ getComputedStyle(progress_containerEl).width 
+    //console.log(getComputedStyle(progress_containerEl).width)
     //console.log(event.offsetX)
     //console.log(audioEl.duration)
     audioEl.currentTime = (event.offsetX/event.target.clientWidth)*audioEl.duration
