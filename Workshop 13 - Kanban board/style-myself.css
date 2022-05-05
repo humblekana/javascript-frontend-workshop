@@ -3,9 +3,9 @@
 }
 
 :root{
-    --work1:rgb(252, 187, 65);
-    --work2:rgb(87, 87, 255);
-    --work3:rgb(63, 192, 63);
+    --work1:rgb(241, 191, 98);
+    --work2:rgb(114, 114, 252);
+    --work3:rgb(87, 210, 87);
     --work4:rgb(255, 102, 102);
 }
 
@@ -19,6 +19,7 @@ body{
     overflow-y: hidden;
 }
 .title{
+    margin-bottom: 3.5rem;
     text-align: center;
     letter-spacing: 3px;
 }
@@ -54,7 +55,7 @@ ul{
 /* อยู่ภายใน order */
 .drag-column{
     flex-grow: 1;
-    border: 1px solid rgb(0, 0, 0);
+    /* border: 1px solid rgb(0, 0, 0); */
     background-color: rgba(0, 0, 0, 0.289);
     position: relative;
     border-radius: 15px;
@@ -63,11 +64,12 @@ ul{
 }
 
 .header{
-    border: 1px solid black;
+    /* border: 2px solid rgb(0, 0, 0); */
     display: block;
     margin: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
+    padding: 1px 0;
 }
 
 .header h1{
@@ -90,10 +92,10 @@ ul{
     background-color: var(--work4);
 }
 
-.custom-scroll{
+/*.custom-scroll{
     overflow-y: auto;
-    /* max-height: 52vh; */
-}
+    max-height: 50vh;
+}*/
 
 .drag-list{
     /* border: 1px solid black; */
@@ -101,7 +103,7 @@ ul{
 }
 
 .drag-item{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 15px;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.7);
