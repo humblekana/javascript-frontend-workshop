@@ -26,7 +26,7 @@ async function getPhotos(){
 //ฟังก์ชันแสดงผลของภาพ
 function displayImage(){
     pictureData.forEach((photo)=>{
-        console.log(photo)
+        //console.log(photo)
         const tagA = document.createElement("a")
         tagA.href = `${photo.links.html}`
         tagA.target = "_blank"
@@ -43,9 +43,9 @@ function displayImage(){
 
 //เช็คการ scroll
 window.addEventListener("scroll",()=>{
-    //console.log(window.innerHeight)
+    console.log(window.innerHeight)
     //console.log(window.scrollY)
-    console.log(document.body.offsetHeight-100)
+    //console.log(document.body.offsetHeight-100)
     //console.log(window.innerWidth)
     // window.innerHeight ความสูงของ window คงที่
     // window.scrollY ขนาด scrollY เพิ่มขึ้นเรื่อยๆดักจับระยะ
