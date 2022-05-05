@@ -12,6 +12,8 @@ function showText(){
         const textEL = section.children[1];
 
         // window.pageYOffset scroll ในแนวแกน Y  | window.pageXOffset scroll ในแนวแกน X
+        //อาจจะใช้อันนี้ก็ได้
+        //const scrollPos = window.scrollY;
         const scrollPos = window.pageYOffset;
         // 500 + 100 // 50
         // |offsetTop offsetLeft| ตำแหน่งของelement บนและซ้ายสุด,|offsetHeight offsetWidth| ความสูงและความกว้างของ element 
