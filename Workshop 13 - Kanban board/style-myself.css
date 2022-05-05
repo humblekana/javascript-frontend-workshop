@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --work1:rgb(252, 187, 65);
+    --work2:rgb(87, 87, 255);
+    --work3:rgb(63, 192, 63);
+    --work4:rgb(255, 102, 102);
+}
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80");    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+.title{
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0,0.5);
+}
+
+ul{
+    list-style: none;
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container{
+    /* border: 1px solid rgb(0, 0, 0); */
+    margin: 20px;
+    /* display: flex;
+    justify-content: center; */
+
+}
+
+.order{
+    /* border: 1px solid rgb(0, 0, 0); */
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+/* อยู่ภายใน order */
+.drag-column{
+    flex-grow: 1;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.289);
+    position: relative;
+    border-radius: 15px;
+    margin: 0 15px;
+    overflow-x: hidden;
+}
+
+.header{
+    border: 1px solid black;
+    display: block;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.header h1{
+    font-size: 1.5rem;
+}
+
+.backlog-column .header{
+    background-color: var(--work1);
+}
+
+.progress-column .header{
+    background-color: var(--work2);
+}
+
+.complete-column .header{
+    background-color: var(--work3);
+}
+
+.reject-column .header{
+    background-color: var(--work4);
+}
+
+.custom-scroll{
+    overflow-y: auto;
+    /* max-height: 52vh; */
+}
+
+.drag-list{
+    /* border: 1px solid black; */
+    /* min-height: 50px;  */
+}
+
+.drag-item{
+    border: 1px solid black;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+}
