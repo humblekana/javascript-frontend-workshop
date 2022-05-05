@@ -13,6 +13,7 @@ shareEl.addEventListener("click",async (event)=>{
     //console.log(event.target)
     shareEl.disabled = true
     await videoEl.requestPictureInPicture()
+    //หน้าจอแบบเล็กๆ
     console.log(await videoEl.requestPictureInPicture())
     //หน้าจอเต็ม screen
     //await videoEl.requestFullscreen()
