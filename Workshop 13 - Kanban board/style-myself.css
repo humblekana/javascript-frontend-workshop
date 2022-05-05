@@ -97,7 +97,7 @@ ul{
 
 .drag-list{
     /* border: 1px solid black; */
-    /* min-height: 50px;  */
+    min-height: 50px;
 }
 
 .drag-item{
