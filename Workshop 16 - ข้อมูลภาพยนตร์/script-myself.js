@@ -34,6 +34,7 @@ async function displayMovie(url){
     datas.results.forEach(e=>{
         //console.log(e)
         const divEl = document.createElement("div")
+        //แอด class movie ลงไป
         divEl.classList.add("movie")
         const titelEl = document.createElement("h2")
         const imgEl = document.createElement("img")
