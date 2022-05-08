@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+}
+
+body{
+    background-color: #393838;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.movie-container{
+    /* border: 1px solid black; */
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-container label{
+    margin-bottom: 5px;
+}
+
+.movie-container select{
+    border: 0;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    appearance: none;
+    margin-top: 5px;      
+}
+.seat{
+    background-color: #cbcbcb;
+    width: 20px;
+    height: 15px;
+    margin: 3px;
+    border-radius: 5px 5px 0 0;
+}
+
+.row{
+    display: flex;
+}
+
+.seat.selected{
+    background-color: rgb(98, 255, 0);
+}
+
+.seat.choosed{
+    background-color: rgb(255, 2, 2);
+}
+
+.seat:nth-of-type(2){
+    margin-right: 20px;
+}
+
+.seat:nth-last-of-type(2){
+    margin-left: 20px;
+}
+
+.showcase{
+    /* border: 1px solid black; */
+    background-color: rgb(162, 162, 162);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.showcase li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.showcase li small{
+    margin-left: 5px;
+    color: #000000;
+}
+
+.seat:not(.choosed):hover{
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.screen{
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 3px 8px rgb(232, 232, 232,0.9);
+    transform: rotateX(-45deg);
+}
+
+.container{
+    perspective: 1000px; 
+    margin-bottom: 15px;   
+}
+
+.text span{
+    color: rgb(98, 255, 0);
+}
