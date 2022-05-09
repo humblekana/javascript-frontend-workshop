@@ -26,7 +26,7 @@ async function displayMovie(url){
     const datas = await response.json()
     //console.log(datas.results)
     // ทำการเช็คว่าเมื่อถ้ามีโหนดลูก ให้ลบให้หมด เหมือนการ reset
-    console.log(contentEl.firstElementChild)
+    //console.log(contentEl.firstElementChild)
     while(contentEl.childElementCount > 0){
        contentEl.removeChild(contentEl.firstChild)
     }
@@ -39,7 +39,7 @@ async function displayMovie(url){
         const titelEl = document.createElement("h2")
         const imgEl = document.createElement("img")
         imgEl.src = `${urlPoster}${e.poster_path}`
-        titelEl.innerText = `${e.title.substring(0,24)}`
+        titelEl.innerText = `${e.title.substring(0,30)}`
         divEl.appendChild(titelEl)
         divEl.appendChild(imgEl)
         contentEl.appendChild(divEl)

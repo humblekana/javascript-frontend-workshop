@@ -43,6 +43,7 @@ nav select{
     margin: 40px 30px;
     border-radius: 15px 15px 0 0;
 }
+
 .content .movie:hover{
     filter: brightness(115%);
     transform: scale(0.99);
