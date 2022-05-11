@@ -8,10 +8,14 @@
     <script src="https://kit.fontawesome.com/70e1721a75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style-myself.css">
 </head>
+
 <body>
+    <!-- ส่วนของปุ่มเพื่อเลือก ระดับของเกมส์ -->
     <button id="level-btn" class="level-btn">
         <i class="fa-solid fa-gamepad"></i>
     </button>
+    
+    <!-- ส่วน header แถบระดับความยากด้านบน -->
     <div class="setting" id="setting">
         <form id="level-form">
             <label>ระดับความยาก:</label>
@@ -22,6 +26,8 @@
             </select>
         </form>
     </div>
+    
+    <!-- ส่วนของเกมส์ -->
     <div class="container">
         <h2>เกมพิมพ์เร็ว</h2>
         <h1 id="word">เศรษฐี</h1>
@@ -33,6 +39,8 @@
         <p class="score">
             <span id="score"></span>    
         </p>
+        
+        <!-- ถ้าหากว่าเกมส์จบให้ปรากฎขึ้นมา -->
         <div class="gameover" id="gameover">
             <p>เกมส์จบแล้วววววว</p>
         </div>

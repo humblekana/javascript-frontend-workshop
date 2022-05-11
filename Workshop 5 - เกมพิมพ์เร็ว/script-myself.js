@@ -9,6 +9,7 @@ const level_formEl = document.getElementById("level-form");
 const levelEl = document.getElementById("level");
 const gameoverEl = document.getElementById("gameover");
 
+//เก็บข้อมูลของคำโดยจะสุ่มแสดงผล
 const words = ["หมาป่า","แมวน้ำ","สิงโต","นกพิราบ","จิงโจ้","คิงคอง","ลิง","ปลาดุก"];
 
 // ตัวแปรเก็บค่าต่างๆ 
@@ -16,18 +17,22 @@ let randomWord;
 let score=0;
 let time=10;
 let level;
+// เริ่มต้นก็ทำการสุ่มค่าขึ้นมา 0-(ความยาวของลิส-1)
 let temp_randomWord = parseInt(Math.random()*words.length);
 //ตัวแปรเริ่มนับเวลา 
 let timeInterval;
 //ทำการดึงค่าจากโหมด ใน localStorage มาใช้
 const saveMode=localStorage.getItem('mode') !== null ? localStorage.getItem('mode') : 'medium';
 
-//ฟังชันสุ่มค่า word
+//ฟังชันสุ่มค่า word ทำการ return กลับไป
 function getRandonword(){
+    //สุ่มค่าขึ้นมาอีกครั้ง แล้วทำการเช็คว่าตรงกับ temp_randomWord ไหม
     let result_word = parseInt(Math.random()*words.length)
+    // ถ้าหากว่าสตรงก็สุ่มใหม่จนกว่าจะไม่ตรง
     while(result_word == temp_randomWord){
         result_word = parseInt(Math.random()*words.length)
     }
+    //ทำการเซฟค่าแล้วก็นำไปเช็คต่อไป
     temp_randomWord = result_word
     return words[result_word];
 }
@@ -51,8 +56,9 @@ function updateTime(){
     time--; 
     timeEl.innerHTML = `เวลา ${time} s`; 
     if (time == 0){
-        //ใช้หยุดการนับเวลาถอยหลัง clearInterval(ชื่อตัวแปรที่ตั้งไว้)
+        //ใช้หยุดการนับเวลาถอยหลัง clearInterval(ชื่อตัวแปรที่ตั้งไว้) ซึ่งคือ timeInterval
         clearInterval(timeInterval);
+        // ทำการเรียกฟังชันก์ gameOver() เพื่อแสดงผล
         gameOver();
     }
 }
@@ -78,6 +84,7 @@ function startGame(){
     displayWord();
 }
 
+// event รับค่าใน input text
 text_wordEl.addEventListener("input",(event)=>{
     //console.log(event.target.value) ใช้เป็นแบบนี้ก็ได้
     const temp_text = text_wordEl.value
@@ -101,6 +108,7 @@ btn_levelEl.addEventListener("click",()=>{
     settingEl.classList.toggle("hide")
 })
 
+//event เมื่อมีการเปลี่ยนแปลงตัวเลือก
 levelEl.addEventListener("change",(event)=>{
     level = event.target.value;
     //เซ็ตไอเท็มลงใน storage คีย์คือ mode 
@@ -112,8 +120,10 @@ levelEl.addEventListener("change",(event)=>{
 text_wordEl.addEventListener("focus",(event)=>{
     //console.log(event.target)
     //ฟังชันนับเวลา setInterval(function,time(ms))
+    //เมื่อเรอ่มต้นเปลี่ยน opacity เป็น 1 ให้มองเห็นได้
     wordEl.style.opacity = "1"
     timeInterval = setInterval(updateTime,1000)
 })
 
+//เรียกเพื่อเริ่มต้นแสดงผล
 startGame();

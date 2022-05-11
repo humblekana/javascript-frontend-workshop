@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 *{
     box-sizing: border-box;
     font-family: 'Itim', cursive;
@@ -10,10 +11,12 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     position: relative;
 }
 
+/* ส่วนของปุ่มเลือกระดับเกมส์ */
 .level-btn{
     cursor: pointer;
     padding: 5px 10px;
@@ -28,6 +31,7 @@ body{
     transform: scale(0.95)
 }
 
+/* ส่วนของแถบระดับความยากด้านบน  */
 .setting{
     background-color: #20316b;
     position: absolute;
@@ -43,13 +47,12 @@ body{
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
 }
-
 .setting.hide{
     transform: translateY(-100%);
 }
-
 select{
     padding: 5px;
+    /* ปิดเพื่อไม่ให้มีการแสดงแถบตอนกดเลือกลง */
     appearance: none;
     border: 0;
     border-radius: 5px;
@@ -58,12 +61,12 @@ select{
     margin-left: 10px;
     font-size: 16px;
 }
-
 label{
     color: white;
     font-size: 20px;
 }
 
+/* ส่วนของเกมส์ */
 .container{
     background-color: #20316b;
     width: 500px;
@@ -74,23 +77,20 @@ label{
     color: white;
     padding: 10px;
 }
-
 h2{
     background-color: #506ccb;
     padding: 10px;
     margin: 20px 20px;
     font-size: 36px;
 }
-
 #word{
     margin: 10px auto;
     color: yellow;
     font-size: 28px;
     opacity: 0;
 }
-
 input{
-    width: 50%;
+    width: 60%;
     text-align: center;
     border: 0;
     outline: none;
@@ -100,7 +100,6 @@ input{
     border-radius: 10px;
     margin-bottom: 5px;
 }
-
 .time{
     position: absolute;
     top: 100px;
@@ -108,7 +107,6 @@ input{
     font-size: 20px;
     color: red;
 }
-
 .score{
     position: absolute;
     top: 100px;
@@ -116,7 +114,7 @@ input{
     font-size: 20px;
     color: yellowgreen;
 }
-
+/* แสดงเมื่อจบเกมส์ ควบคุมโดย javascript */
 .gameover{
     background-color: inherit;
     position: absolute;
@@ -125,14 +123,15 @@ input{
     height: 100%;
     width: 100%;
     border-radius: 20px;
+    /* ปิดการแสดงผลไว้ก่อน ให้เปิดตอนที่ javascript สั่ง */
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
-
 .btn-reload{
+    background-color: rgb(219, 99, 1);
+    color: white;
     cursor: pointer;
     padding: 10px;
     margin-top: 10px;
@@ -140,11 +139,10 @@ input{
     border-radius: 10px;
     font-size: 16px;
 }
-
 .btn-reload:active{
     transform: scale(0.95);    
 }
-
+/* คลาสตอนแสดงผลคะแนน กำหนดใน javascript */
 .p-finish{
     font-size: 18px;
 }
