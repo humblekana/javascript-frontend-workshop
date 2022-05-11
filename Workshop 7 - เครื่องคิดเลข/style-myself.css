@@ -1,34 +1,31 @@
 *{
     box-sizing: border-box;
 }
-
 body{
     background-color: rgb(254, 248, 241);
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
+/* ภายใน calculator */
 .calculator{
     background-color: rgb(255, 255, 255);
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0px 2px 10px rgb(0, 0, 0,0.5);
+    box-shadow: 0px 2px 10px rgb(0, 0, 0,0.6);
 }
-
+/* ส่วนแสดงตัวเลข */
 .cal-display{
     background-color: black;
     color: white;
-    /*display: flex;
-    justify-content: flex-end;
-    align-items: center;*/
     text-align: end;
     border-radius: 10px 10px 0 0;
 }
-
 .cal-display h1{
     margin: 0 auto;
     font-size: 45px;
@@ -36,19 +33,17 @@ body{
     padding: 20px;
     overflow-x: auto;
 }
-
+/* ส่วนปุ่ม */
 .cal-button{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 10px;
     padding: 10px;
 }
-
 .equal{
     grid-column: 4;
     grid-row: 2/6 ;
 }
-
 button{
     min-height: 50px;
     border: 0;
@@ -59,13 +54,11 @@ button{
     font-size: 16px;
     font-weight: bold;
 }
-
 button:hover{
     filter: brightness(110%);
 }
-
 button:active{
-    transform: translateY(2px);
+    transform: translateY(3px);
 }
 
 .operator , .equal{
