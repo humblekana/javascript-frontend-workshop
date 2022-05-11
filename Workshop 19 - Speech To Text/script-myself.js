@@ -3,17 +3,19 @@
 const speechRecognize = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognize = new speechRecognize();
 
+// ตัวแปรเซฟข้อความในการนำข้อความมาต่อแล้วแสดงผล
 let textEl = ""
 // เข้าถึง element ปุ่ม
 const button = document.querySelector(".control")
 
-// recognize รองรับหลายภาษา เป็นฟังชันก์เพื่อเลือกภาษา
+// ฟังชันก์
 function setUpVoice(){
-    console.log(recognize)
-    //กำหนดภาษา
+    //console.log(recognize)
+    //recognize รองรับหลายภาษา ทำการกำหนดภาษา
     recognize.lang = "th-TH"
+    // event เมื่อคลิ๊กแล้วให้เรียกฟังชันก์
     button.onclick = checkRecord
-    // event ในการรับเสียงแล้วไปประมวลผล
+    // event ในการรับเสียง เมื่อมีเสียงมาจะนำไปประมวลผล
     recognize.addEventListener("result",setVoicetoText)
     // ถ้าหากว่าพูดจบประโยค ใช้ event นี้ 
     recognize.addEventListener("end",continueRecord)
@@ -56,6 +58,7 @@ function continueRecord(){
     }
 }
 
+// เรียกฟังชันก์แสดงผลในตอนแรก
 setUpVoice()
 
 
