@@ -39,8 +39,10 @@ function pauseSong(){
 
 // กดปุ่มเมื่อจะเล่น กดปุ่มเมื่อจะหยุด
 playBtnEl.addEventListener("click",(event)=>{
+    // เช็คว่ามีคลาส play อยู่ไหม
     const isPlay = music_containerEl.classList.contains("play")
-    console.log(isPlay)
+    //console.log(isPlay)
+    // ถ้ามี class play อยู่แสดงว่ากดเพื่อจะหยุด
     if (isPlay){
         pauseSong()
     }else{
@@ -48,23 +50,27 @@ playBtnEl.addEventListener("click",(event)=>{
     } 
 })
 
-//กดปุ่มเมื่อต้องการเปลี่ยนเพลงไปต่อ
+//กดปุ่มเมื่อต้องการเปลี่ยนเพลงย้อนกลับ
 prevBtnEl.addEventListener("click",()=>{
     index_song--
     if (index_song < 0){
         index_song = 2
     }
+    //เปลี่ยนเพลง
     loadSongs(songs_Data[index_song])
+    // สั่งให้เล่นทันที
     playSong()
 })
 
-//กดปุ่มเมื่อต้องการเปลี่ยนเพลงย้อนกลับ
+//กดปุ่มเมื่อต้องการเปลี่ยนเพลงไปต่อ
 nextBtnEl.addEventListener("click",()=>{
     index_song++
     if (index_song > 2){
         index_song = 0
     }
+    //เปลี่ยนเพลง
     loadSongs(songs_Data[index_song])
+    // สั่งให้เล่นทันที
     playSong()
 })
 
@@ -74,6 +80,7 @@ audioEl.addEventListener("timeupdate",(event)=>{
     // AllTime เวลาทั้งหมดของเพลง 
     const CurrentTime = event.target.currentTime
     const AllTime = event.target.duration
+    //console.log(event.target)
     //console.log(CurrentTime)
     //console.log(AllTime)
     const progressPercent = (CurrentTime/AllTime)*100
@@ -81,7 +88,7 @@ audioEl.addEventListener("timeupdate",(event)=>{
     //console.log(progressPercent)
 })
 
-//
+// ถ้าหากมีการกดที่ progess bar
 progress_containerEl.addEventListener("click",(event)=>{
     //event.target.clientWidth ความยาวของ progress
     //event.offsetX ความยาวที่ณ ตำแหน่งที่เรากด
@@ -89,6 +96,7 @@ progress_containerEl.addEventListener("click",(event)=>{
     //console.log(getComputedStyle(progress_containerEl).width)
     //console.log(event.offsetX)
     //console.log(audioEl.duration)
+    //ทำการคำนวณค่าเพื่อ ให้ความยาวของ progess bar ตามเวลาของเพลง
     audioEl.currentTime = (event.offsetX/event.target.clientWidth)*audioEl.duration
 })
 
@@ -102,4 +110,5 @@ audioEl.addEventListener("ended",()=>{
     playSong()    
 })
 
+// เรียกฟังชันก์เริ่มต้นโปรแกรม
 loadSongs(songs_Data[index_song])

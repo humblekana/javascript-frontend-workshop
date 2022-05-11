@@ -9,18 +9,28 @@
     <title>โปรแกรมเล่นเพลง</title>
 </head>
 <body>
+    <!-- หัวข้อ -->
     <h1>โปรแกรมเล่นเพลง (Music)</h1>  
+    <!-- ส่วนแสดงผลเล่นเพลง  -->
     <div class="music-container" id="music-container">
+        <!-- ส่วนแถบแสดงช่ื่อเพลง และ progess bar -->
         <div class="music-info">
             <h4 id="title">เพลงมาริโอ้</h4>
+            <!-- progress bar -->
             <div class="progress-container" id="progress-container">
                 <div class="progress" id="progress"></div>
             </div>
         </div>
+        
+        <!-- ทำการปิดเอาไว้ไม่ให้แสดงผล ไว้ใช้ควบคุมผ่าน javascript อย่างเดียว -->
         <audio src="music/Mario.mp3" controls hidden></audio>
+        
+        <!-- ส่วนรูปภาพ -->
         <div class="img-container">
             <img src="cover/Mario.jpg" alt="" id="img">
         </div>
+        
+        <!-- ส่วนปุ่ม navigater -->
         <div class="navigater">
             <button id="prev" class="btn"><i class="fa-solid fa-backward"></i></button>
             <button id="play" class="btn"><i class="fa-solid fa-play"></i></button>

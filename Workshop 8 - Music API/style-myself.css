@@ -20,6 +20,7 @@ body{
     align-items: center;
 }
 
+/* ส่วน music-container */
 .music-container{
     background-color: white;
     border-radius: 20px;
@@ -31,12 +32,12 @@ body{
     z-index:10;
 }
 
+/* รูปภาพเพลง */
 .img-container{
     position: relative;
     top: -10px;
     width: 100px;
 }
-
 .img-container img{
     width: inherit;
     height: inherit;
@@ -51,11 +52,10 @@ body{
     animation-iteration-count: infinite;
     animation-play-state: paused;
 }
-
+/* ถ้ามีการเพิ่ม class play ให้เล่น animation */
 .music-container.play .img-container img{
     animation-play-state:running; 
 }
-
 @keyframes rotate_img{
     from{
         transform: rotate(0deg);    
@@ -65,13 +65,13 @@ body{
     }   
 }
 
+/* ส่วนปุ่ม navigater */
 .navigater{
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 }
-
 .btn{
     border: 0;
     font-size: 22px;
@@ -81,13 +81,13 @@ body{
     cursor: pointer;
     
 }
-
 .btn:active{
     transform: scale(0.90);
 }
 
+/* ส่วนแถบแสดงช่ื่อเพลง และ progess bar */
 .music-info{
-    background-color: rgb(8, 102, 243,0.8);
+    background-color: rgba(82, 82, 82, 0.8);
     border-radius: 10px 10px 0 0;
     width: calc(72%);
     padding: 0px 10px 10px 115px;
@@ -100,18 +100,15 @@ body{
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
 }
-
 .music-container.play .music-info{
     transform: translateY(-100%); 
     opacity: 1; 
 }
-
 .music-info h4{
    color: white;
     margin: 10px 0 0 0;
     text-align: center;   
 }
-
 .progress-container{
     background-color: white;
     width: 100%;
@@ -120,9 +117,8 @@ body{
     border-radius: 10px;
     margin: 10px 0;
 }
-
 .progress{
-    background-color: rgb(66, 173, 254);
+    background-color: rgb(6, 6, 6);
     width: 0%;
     height: inherit;
     border-radius: 10px;
