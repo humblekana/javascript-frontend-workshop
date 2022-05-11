@@ -1,13 +1,14 @@
 const contentsEL = document.querySelectorAll(".content")
-//console.log(contentsEL)
+
 // ทำการดักจับการเลื่อนของหน้าจอ
 document.addEventListener("scroll",showText);
 
 //โชว์ข้อความ
 function showText(){
     contentsEL.forEach(section =>{
-        //console.log(section.querySelector("img")) ใช้ได้เหมือนกัน
-        //console.log(section.querySelector(".text")) ใช้ได้เหมือนกัน
+        //ใช้ได้เหมือนกัน
+        //console.log(section.querySelector("img")) 
+        //console.log(section.querySelector(".text")) 
         const imgEL = section.children[0];
         const textEL = section.children[1];
 
@@ -16,8 +17,9 @@ function showText(){
         //const scrollPos = window.scrollY;
         const scrollPos = window.pageYOffset;
         // 500 + 100 // 50
-        // |offsetTop offsetLeft| ตำแหน่งของelement บนและซ้ายสุด,|offsetHeight offsetWidth| ความสูงและความกว้างของ element 
+        // |offsetTop offsetLeft คงที่| ตำแหน่งของelement บนและซ้ายสุด,|offsetHeight offsetWidth| ความสูงและความกว้างของ element 
         const textPosition = imgEL.offsetTop + imgEL.offsetHeight /100
+        console.log(imgEL.offsetHeight)
         if (scrollPos > textPosition){
             //แสดงเนื้อหา
             textEL.classList.add("show_reveal")
