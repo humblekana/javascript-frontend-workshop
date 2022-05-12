@@ -5,6 +5,7 @@ const password1El = document.getElementById("password")
 const password2El = document.getElementById("password-confirm") 
 
 
+// event เมื่อกดปุ่ม submit
 formEl.addEventListener("submit",(event)=>{
     event.preventDefault()
     /*console.log(event.target)
@@ -73,7 +74,6 @@ function showError(formControl,smallEl,text){
     smallEl.innerText = `${text}`
     smallEl.style.color = "red"
     smallEl.style.visibility = "visible"
-    
     //console.log(getComputedStyle(smallEl).visibility)
 }
 
