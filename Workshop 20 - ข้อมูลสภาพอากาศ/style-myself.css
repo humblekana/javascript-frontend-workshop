@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(ellipse, rgba(66, 161, 255, 1) 0%, rgba(0, 8, 255, 0.84) 100%);    
+    height: 100vh;
+    text-align: center;
+}
+
+/* ส่วน container */
+.container{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* ส่วน section */
+section{
+    /* border: 1px solid black; */
+    margin-top: 10rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* ส่วนข้อมูลในกล่อง infomation */
+#infomation{
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 15px rgb(0, 0, 0,0.8);
+}
+
+/* ส่วนข้อมูลในกล่อง weather */
+#weather{
+    /* border: 1px solid black; */
+    background-color: rgb(255, 68, 0,0.9);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    padding: 10px;
+}
+#weather h1{
+    /* border: 1px solid black; */
+    margin: 0;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+#weather small{
+    /* border: 1px solid black; */
+    font-size: 1.5rem;
+}
+
+/* ส่วนข้อมูลในกล่อง info */
+#info{
+    /* border: 1px solid black; */
+    display: flex;
+    width: 100%;
+    font-size: 1.5rem;
+    background-color: rgb(254, 254, 254);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#info div{
+    flex-grow: 1;
+    padding: 20px; 
+    border-right: 2px solid rgb(148, 148, 148);
+}
+#info div:last-child{
+    border:0;
+}
+
+/* ข้อมูลในกล่อง location */
+#location{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+#location #city{
+    /* border: 1px solid black; */
+    font-size: 3rem;
+    margin: 0;    
+}
+#location #state{
+    /* border: 1px solid black; */
+    font-size: 1.5rem;
+}
+
+/* ส่วน header */
+header{
+    /* border: 1px solid black; */
+    max-width: 500px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+header h1{
+    font-size: 3rem;
+}
+form{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+/* รวมทั้งปุ่มด้วย */
+form input{
+    border: 0;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 15px 10px; 
+    border-radius: 10px;   
+}
+form input:last-child{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(255, 68, 0);
+    transform: translateX(10px);
+}
+form input:last-child:active{
+    transform: scale(0.95);  
+}

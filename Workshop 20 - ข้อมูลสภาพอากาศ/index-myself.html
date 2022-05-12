@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-myself.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ส่วนในการค้นข้อมูล -->
+        <header>
+            <h1>Weather API</h1>
+            <form action="" id="form">
+                <input type="text" placeholder="search city name" id="search">
+                <input type="submit" value="search">
+            </form>
+        </header>
+        
+        <!-- ส่วนในการแสดงข้อมูล -->
+        <section>
+            <!-- ส่วนประเทศ เมือง -->
+            <div id="location">
+                <h1 id="city">bangkok</h1>
+                <p id="state">TH</p>
+            </div>
+            <!-- ส่วนอุณหภูมิ -->
+            <div id="infomation">
+                <div id="weather">
+                    <h1>35</h1>
+                    <small>max : 21 , min : 37</small>
+                </div>
+                <!-- ส่วนค่าอื่นๆ เช่น สถานะ ความชื้น แรงลม -->
+                <div id="info">
+                    <div id="status">hot</div>
+                    <div id="humidity">100</div>
+                    <div id="wind">4.0</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script-myself.js"></script>
+</body>
+</html>
