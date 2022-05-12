@@ -13,12 +13,13 @@ const complete_infoEl = countdown_cancel = document.getElementById("complete-inf
 const create_newtargetEl = countdown_cancel = document.getElementById("create-newtarget")
 
 let Title_info = "" // ตัวแปรเก็บชื่อรายการ
-let Date_info = "" // ตัวแปรเก็บวันที่
+let Date_info = "" // ตัวแปรเก็บวันที่ปัจจุบัน
 
 let time_target      //ตัวแปรเก็บวันที่เป้าหมาย
-let countTime        //ใช้เป็นตัวแปรนับเวลาถอยหลัง ฟังชัน setInterval
-let saveCountDown    //saveCountDown ตัวแปร อ็อบเจ็คเก็บค่าต่างๆ
+let countTime        //ใช้เป็นตัวแปรนับเวลาถอยหลัง ฟังชัน setInterval และเพื่อเคลียค่า
+let saveCountDown    //saveCountDown ตัวแปร อ็อบเจ็คเก็บค่าต่างๆ ใน localStorage
 
+// ตัวแปรเก็บค่าเพื่อให้ง่ายต่อการคำนวณ
 const get_second = 1000
 const get_minute = 1000*60
 const get_hour = 1000*60*60
@@ -27,9 +28,10 @@ const get_day = 1000*60*60*24
 formEl.addEventListener("submit",(event)=>{
     event.preventDefault()
     console.log(titleEl.value)
+    //จาก input type="date" ได้ค่าเป็น string
     console.log(dateEl.value)
     
-    //ทำการเก็บค่าจากแบบฟอร์มมาใส่
+    //ทำการดึงค่าจากแบบฟอร์มมาใส่ตัวแปรเพื่อเก็บค่า
     Title_info = titleEl.value
     Date_info = dateEl.value
 
@@ -46,10 +48,12 @@ formEl.addEventListener("submit",(event)=>{
         //ได้ข้อมูลแบบ timestamp
         time_target = new Date(Date_info).getTime()
         //console.log("เวลาที่ตั้งไว้",time_target)
+        // เริ่มฟังชันก์ในการนับเวลา
         setupTime()
     }
 })
 
+//ฟังชันก์ในการนับเวลา
 function setupTime(){
     //let now_current = new Date(2022,4,4,6,59,58).getTime()
     countTime = setInterval(()=>{
@@ -76,7 +80,7 @@ function setupTime(){
             completeEl.hidden = false
             input_containerEl.hidden = true
             countdownEl.hidden = true
-            complete_infoEl.innerText = `ถึงเวลา ${Title_info} ในวันที่ ${Date_info}`
+            complete_infoEl.innerHTML= `ถึงเวลา <mark>${Title_info}</mark> ในวันที่ ${Date_info}`
             clearInterval(countTime)
         }else{
             //เมื่อยังไม่ถึงเวลา ให้นับและอัพเดทเวลาไปเรื่อยๆ
@@ -136,5 +140,6 @@ create_newtargetEl.addEventListener("click",()=>{
     dateEl.value = ""
     
 })
-//เรียกฟังชันก์เช็คว่าใน localStorage มีค่าอยู่ไหม
+
+//เรียกฟังชันก์ในตอนเปิดบราวเซอร์แล้วเช็คว่าใน localStorage มีค่าอยู่ไหม
 getMemoryData()
