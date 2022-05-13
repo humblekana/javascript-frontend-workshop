@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(128, 196, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ส่วน container */
+.container{
+    background-color: aliceblue;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 5px 12px rgb(61, 61, 61);
+}
+
+/* ส่วน container question-header */
+.question-header{
+    /* border: 1px solid black; */
+    padding: 20px;
+}
+h2{
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 auto;
+}
+ul{
+    list-style-type: none;
+    transform: translateX(-20px);
+}
+ul li{
+    /* border: 1px solid black; */
+    padding: 10px;
+    font-size: 1.3rem;
+}
+button{
+    background-color: rgb(255, 136, 0);
+    border: 0;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* ส่วนของ result */
+#result{
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* responsive */
+@media only screen and (max-width:450px) {
+    h2{
+        font-size: 1.5rem;    
+    }
+    #result{
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width:550px) {
+    #result{
+        font-size: 0.5rem;
+    }
+}
