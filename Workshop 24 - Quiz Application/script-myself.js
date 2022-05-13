@@ -23,6 +23,14 @@ const questionData = [
         c:"Monitor",
         d:"ถูกทุกข้อ",
         correct:"d"
+    },
+    {
+        question:"4.ใครหล่อที่สุดในโลก",
+        a:"คะน้า",
+        b:"ใครก็ได้ที่ไม่ใช่คะน้า",
+        c:"คะน้า ยังไงก็คะน้า",
+        d:"a c ถูกต้อง",
+        correct:"d"
     }
 ]
 
@@ -85,13 +93,13 @@ submitEl.addEventListener("click",()=>{
         // ทำการเปลี่ยนข้อโดยการเพิ่ม index
         index++
         // ถ้ายังไม่ถึงข้อสุดท้ายไม่แสดงผลข้อต่อไป
-        if (index <= 2){
+        if (index <= questionData.length-1){
             displayQuestion()
         // ถ้าหมดทุกข้อแล้วแสดงคะแนน
         }else{
             question_headerEl.hidden = true
             resultEl.hidden = false
-            resultEl.children[0].innerText = `คะแนนของคุณคือ ${score} คะแนน จาก 3`
+            resultEl.children[0].innerText = `คะแนนของคุณคือ ${score} คะแนน จาก ${questionData.length}`
         }
     }
     console.log(resultEl.children[0])
