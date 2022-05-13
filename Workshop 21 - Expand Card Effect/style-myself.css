@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    overflow: hidden; 
+    
+}
+/* ส่วน container */
+.container{
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+/* ส่วนของแต่ละ item */
+.item{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    margin: 0 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    flex: 1;
+    opacity: 0.75;
+    transition-property: flex-grow,opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.item.active{
+    flex-grow: 10;
+    opacity: 1;
+}
+.item h3{
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 2px 5px 10px black;
+    background-color: white;
+    border-radius: 20px;
+    width: 70%;
+    margin: 20px auto;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+.item.item.active h3{
+    opacity: 1;
+}
+
+/* ถ้าหน้าจอเล็กกว่า 700 px ให้แสดงแค่ 5 สิ่งมหัศจรรย์ */
+@media only screen and (max-width:700px){
+    .item:nth-of-type(6),.item:nth-of-type(7){
+        display: none;
+    }
+}
+
+
