@@ -16,7 +16,7 @@ const questionData = [
         correct:"a"
     },
     {
-        question:"3.ข้อใดคือฮา์ดแวร์",
+        question:"3.ข้อใดคือฮาร์ดแวร์",
         a:"Keyboard",
         b:"Mouse",
         c:"Monitor",
