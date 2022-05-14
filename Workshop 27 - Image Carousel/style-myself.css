@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* เฉพาะส่วนของรูปภาพ */
+img{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* ส่วน block carousel */
+.carousel{
+    max-width: 500px;
+    width: 100%;
+    /* ถ้าเกิดว่างงลอง comment overflow ดู */
+    overflow: hidden;
+    height: 550px;
+    box-shadow: 3px 3px 10px black;
+}
+
+/* ส่วน block img */
+.img-container{
+    display: flex;
+    /* จุดสำคัญทำงานร่วมกับ javascript เพื่อให้ภาพสามารถเลื่อนได้ */
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+/* ส่วน block ปุ่ม */
+.button-container{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+/* ปรับความสวยปุ่ม */
+.btn{
+    padding: 5px 10px;
+    width: 40%;
+    border: 0;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: rgb(210, 210, 210);
+}
+.btn:active{
+    transform: scale(0.98);
+}
