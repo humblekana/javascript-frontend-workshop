@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-myself.css">
+</head>
+<body>
+    <!-- ส่วน container -->
+    <div id="panel" class="container">
+        <!-- หัวข้อ -->
+        <strong>ประเมินความพึงพอใจของคุณ</strong>
+        <!-- ความพึงพอใจ ไม่พึงพอใจ -->
+        <div class="rating-container">
+            <div class="rating">
+                <img src="./image/sad.svg" alt="">
+                <small>ไม่พึงพอใจ</small>
+            </div>
+            <!-- ความพึงพอใจ พึงพอใจ -->
+            <div class="rating">
+                <img src="./image/neutral.svg" alt="">
+                <small>พึงพอใจ</small>
+            </div>
+            <!-- ความพึงพอใจ พึงพอใจมาก -->
+            <div class="rating">
+                <img src="./image/smile.svg" alt="">
+                <small>พึงพอใจมาก</small>
+            </div>
+        </div>
+        <!-- ปุ่มในการส่งความพึงพอใจ -->
+        <button class="btn" id="submit">ส่งผลการประเมินความพึงพอใจ</button>
+    </div>
+    <script src="script-myself.js"></script>
+</body>
+</html>
