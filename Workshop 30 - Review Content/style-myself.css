@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+/* container */
+.container{
+    background-image: linear-gradient(270deg, rgba(98, 176, 254, 1) 1%, rgba(255, 82, 168, 1) 100%);;    
+    max-width: 700px;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 50px 70px;
+    position: relative;
+
+}
+
+/* ส่วน progress-bar */
+.progress-bar{
+    background-color: white;
+    height: 4px;
+    width: 100%;
+    /* ทำให้เริ่มต้นด้านซ้าย */
+    transform-origin: left;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* ทำ animation */
+@keyframes loading{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+/* ส่วน quote */
+.fa-solid.fa-quote-left{
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+.fa-solid.fa-quote-right{
+    position: absolute;
+    top: 70px;
+    right: 60px;
+}
+
+/* ข้อความ review */
+.review{
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+/*  ข้อมูล user */
+.user{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.user img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.user .details{
+    /* border: 1px solid black; */
+    margin-left: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
