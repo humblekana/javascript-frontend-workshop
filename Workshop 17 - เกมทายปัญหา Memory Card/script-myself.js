@@ -50,10 +50,13 @@ function createCard(){
 
 // ฟังชันก์ในการสร้าง card
 function createSingleCard(element,index){
+    // สร้าง element div
     const card = document.createElement("div")
+    // ทำการแอด class card
     card.classList.add("card")
 
     // ถ้าเป็น ตัวแรกให้ add class active เพื่อแสดงเลย
+    // ทำงานแค่ครั้งแรกเท่านั้น เพราะ index เพิ่มขึ้นเรื่อยๆ
     if (index == 0){
         card.classList.add("active")
     }
