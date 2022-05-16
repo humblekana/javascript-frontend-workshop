@@ -1,0 +1,207 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+/* ส่วน h1 และปุ่ม */
+h1{
+    /* border: 1px solid black; */
+    position: relative;
+}
+h1 .btn-plus{
+    position: relative;
+    right: 0;
+    transform: translateX(5%);
+}
+
+/* ส่วนปุ่มทุกปุ่ม btn */
+.btn{
+    font-size: 1.4rem;
+    background-color: rgb(255, 228, 206);
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ปุ่มเคลียร์ */
+.btn.clear:active{
+    transform: scale(0.95);
+}
+.btn.clear{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    background-color: rgb(255, 228, 206);
+    font-size: 1.5rem;
+}
+
+/* ส่วนของ cards */
+.card-container{
+    /* border: 1px solid black; */
+    perspective: 800px;
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+.card{
+    /* border: 1px solid black; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    /* ส่วนที่ใช้ร่วมกับ javascript */
+    opacity: 0;
+    transform: translateX(50%);
+    transition-property: transform,opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+/* ถ้าหากมีการใส่ class active */
+.card.active{
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+/* inner-card */
+.inner-card{
+    box-shadow: 0 1px 10px black;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* ถ้าหากไม่กำหนดจะทำให้ตัวอักษรกลับหัว */
+    transform-style:preserve-3d;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+.inner-card-front{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    /* ด้านหน้า */
+    transform: rotateX(0deg);
+}
+.inner-card-back{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    /* ด้านหลัง */
+    transform: rotateX(180deg);
+}
+/* ทำการใส่เนื้อหาหลังเนื้อหาด้านหน้า และเนื้อหาด้านหลัง */
+.inner-card-front::after,.inner-card-back::after{
+    content: "Flip";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(168, 168, 168);
+}
+
+/* ส่วนนี้ทำงานร่วมกับ javascript งงฉิบหาย ถ้าหากมี class show-answer ให้หมุน*/
+.card.show-answer .inner-card{
+    transform: rotateX(180deg);
+}
+
+/* navigation */
+.navigation{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+.navigation .nav-button{
+    padding: 15px;
+    margin: 0 15px;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.5rem;
+}
+.navigation .nav-button:active{
+    transform: scale(0.9);
+}
+.navigation p{
+    font-size: 1.5rem;
+}
+
+
+/* ส่วนของแบบฟอร์ม ปรับแต่งปุ่ม */
+.btn-hidden{
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+/* ส่วนฟอร์มรับข้อมูล */
+.add-container{
+    /* border: 1px solid black; */
+    background-color: rgb(219, 216, 213);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+}
+/* ทำการร่วมกับ javascript เมื่อมีการแอด class show */
+.add-container.show{
+    z-index: 5;
+    opacity: 1;
+}
+.add-container h2{
+    /* border: 1px solid black; */
+    margin: 35px 0;
+}
+.add-container .form-group label{
+    display: block;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+.add-container .form-group textarea{
+    /* border: 1px solid black; */
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 500px;
+    outline: none;
+}
+#add-card{
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
