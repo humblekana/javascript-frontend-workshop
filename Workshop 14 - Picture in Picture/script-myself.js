@@ -2,6 +2,9 @@ const videoEl = document.getElementById("video")
 const requestEl = document.getElementById("request")
 const shareEl = document.getElementById("share")
 
+// ตัวแปรไว้เช็คว่ามีการส่งคำขอครั้งแรกก่อน แล้วจึงสามารถกดแชร์หน้าจอได้
+let check = false
+
 //เมื่อคลิ๊กปุ่ม request
 requestEl.addEventListener("click",(event)=>{
     //console.log(event.target)
@@ -11,22 +14,28 @@ requestEl.addEventListener("click",(event)=>{
 //เมื่อคลิ๊กปุ่ม share
 shareEl.addEventListener("click",async (event)=>{
     //console.log(event.target)
-    shareEl.disabled = true
+    if (!check){
+        return
+    }
     await videoEl.requestPictureInPicture()
     //หน้าจอแบบเล็กๆ
     console.log(await videoEl.requestPictureInPicture())
     //หน้าจอเต็ม screen
     //await videoEl.requestFullscreen()
-    shareEl.disabled = false
+    
 })
 
 
+// ฟังชันก์ในการดึงค่าหน้าจอ
 async function chooseMediaStream(){
+    // เมื่อกดแล้ว ให้ตัวแปรเช็คเป็น true
+    check = true
     try{
         //ตัวแปรเก็บตัวอุปกรณ์ในการแชร์หน้าจอ
         const mediaStream = await navigator.mediaDevices.getDisplayMedia()
         //console.log(mediaStream)
         videoEl.srcObject = mediaStream
+        // ใส่ event
         videoEl.addEventListener("loadedmetadata",()=>{
             videoEl.play()
         })
