@@ -4,7 +4,7 @@ const droppable = document.querySelectorAll(".drag-list")
 let keepItem
 
 //console.log(draggable)
-// ใส่event ให้กับทุก item
+// ใส่ event ให้กับทุก item
 draggable.forEach((item) =>{
     //เมื่อเกิดการลาก
     item.addEventListener("dragstart",(event)=>{
@@ -27,7 +27,7 @@ droppable.forEach((list)=>{
     //เมื่อเกิดการวาง
     list.addEventListener("drop",(event)=>{
         const ulList = event.target
-        //console.log(event.target)
+        console.log(event.target)
         //เช็คว่าลากไปวางใน UL ถ้าไม่ใช่จะกลายเป็น list ใน list
         if (ulList.tagName == "UL"){
             ulList.appendChild(keepItem)

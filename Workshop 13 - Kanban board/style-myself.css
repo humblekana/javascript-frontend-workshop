@@ -15,94 +15,89 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin: 0 auto;
-    overflow-y: hidden;
-}
-.title{
-    margin-bottom: 3.5rem;
-    text-align: center;
-    letter-spacing: 3px;
-}
-
-h1{
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 5px rgb(0, 0, 0,0.5);
-}
-
-ul{
-    list-style: none;
-    /* border: 1px solid black; */
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+/* กำหนดส่วนหัว ชื่อแผนผังการทำงาน */
+.title{
+    /* border: 1px solid black; */
+    margin-bottom: 3.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 2rem;
 }
 
+/* กล่อง container */
 .container{
-    /* border: 1px solid rgb(0, 0, 0); */
-    margin: 20px;
-    /* display: flex;
-    justify-content: center; */
-
+    /* border: 1px solid black; */
+    margin: 1.5rem;
 }
 
+/* กล่อง order */
 .order{
-    /* border: 1px solid rgb(0, 0, 0); */
+    /* border: 1px solid black; */
+    list-style: none;
+    padding: 0;
     display: flex;
     align-items: flex-start;
-    overflow-x: hidden;
 }
 
-/* อยู่ภายใน order */
+/* กล่องแต่ละกล่องที่อยู่ภายใน order */
 .drag-column{
-    flex-grow: 1;
     /* border: 1px solid rgb(0, 0, 0); */
-    background-color: rgba(99, 99, 99, 0.289);
+    flex: 1;
+    background-color: rgba(99, 99, 99, 0.3);
     position: relative;
-    border-radius: 15px;
+    border-radius: 20px;
     margin: 0 15px;
-    overflow-x: hidden;
+    /* ถ้าหากไม่กำหนด ทำให้เมื่อย่อขยายจะไม่อยู่ในขนาด container  */
+    /* overflow: hidden; */
 }
-
 .header{
     /* border: 2px solid rgb(0, 0, 0); */
     display: block;
-    margin: 10px;
+    margin: 0.6rem;
     border-radius: 10px;
     text-align: center;
-    padding: 1px 0;
+    overflow: hidden;
 }
-
 .header h1{
     font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0,0.5);
 }
 
+/* ใส่สี่แต่ละหัวข้อภายในกล่อง */
 .backlog-column .header{
     background-color: var(--work1);
 }
-
 .progress-column .header{
     background-color: var(--work2);
 }
-
 .complete-column .header{
     background-color: var(--work3);
 }
-
 .reject-column .header{
     background-color: var(--work4);
 }
 
-/*.custom-scroll{
-    overflow-y: auto;
-    max-height: 50vh;
-}*/
+/* ดีบัค */
+/* .custom-scroll{
+    border: 1px solid black;
+    border-radius: 20px ;
+} */
 
+/* กล่องที่ภายในเก็บ item */
 .drag-list{
     /* border: 1px solid black; */
+    list-style: none;
+    border-radius: 20px ;
+    padding: 0;
     /* set เพื่อให้มีความกว้างโผล่มาเล็กน้อยให้ลากวางได้ */
     min-height: 50px;
 }
 
+/* item */
 .drag-item{
     /* border: 1px solid black; */
     margin: 15px;
@@ -111,4 +106,5 @@ ul{
     color: white;
     border-radius: 15px;
     cursor: pointer;
+
 }
