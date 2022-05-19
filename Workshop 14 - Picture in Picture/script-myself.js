@@ -1,3 +1,4 @@
+// ตัวแปรดึงค่า element
 const videoEl = document.getElementById("video")
 const requestEl = document.getElementById("request")
 const shareEl = document.getElementById("share")
@@ -35,7 +36,7 @@ async function chooseMediaStream(){
         const mediaStream = await navigator.mediaDevices.getDisplayMedia()
         //console.log(mediaStream)
         videoEl.srcObject = mediaStream
-        // ใส่ event
+        // ใส่ event เมื่อมีการใส่ข้อมูลต่างๆเกี่ยวกับวิดีโอ สั่งให้วิดีโอเล่น
         videoEl.addEventListener("loadedmetadata",()=>{
             videoEl.play()
         })
