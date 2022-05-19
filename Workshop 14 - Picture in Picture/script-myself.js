@@ -27,7 +27,7 @@ shareEl.addEventListener("click",async (event)=>{
 })
 
 
-// ฟังชันก์ในการดึงค่าหน้าจอ
+// ฟังชันก์ในการดึงค่าหน้าจอ ส่งคำขอเข้าถึงอุปกรณ์
 async function chooseMediaStream(){
     // เมื่อกดแล้ว ให้ตัวแปรเช็คเป็น true
     check = true
