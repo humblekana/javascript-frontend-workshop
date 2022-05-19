@@ -16,12 +16,15 @@ h1{
 
 .img-container{
     /* border: 1px solid black; */
-    margin: 10px 15%;
+    max-width: 640px;
+    margin: 30px auto;
     /* text-align: center; */
 }
 
 .img-container img{
     width: 100%;
+    border-radius: 30px;
+    margin: 10px;
 }
 
 @media only screen and (max-width:370px) {
@@ -29,7 +32,7 @@ h1{
         font-size: 1.5rem;
     }        
     .img-container{
-        margin: 10%;
+        margin: auto;
     }
 }
 
@@ -38,6 +41,6 @@ h1{
         font-size: 1rem;
     }        
     .img-container{
-        margin: 5%;
+        margin: auto;
     }
 }

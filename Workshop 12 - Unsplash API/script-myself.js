@@ -4,7 +4,7 @@ const apiKey = "CQbCQ8q232MegKTx520_bst_6hPFqpGitd0jQG8MCJ8"
 const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}` 
 
 const img_containerEl = document.getElementById("img-container")
-let pictureData // ตัวแปรเก็บค่าที่ได้จาก การดึงAPI เป็น array
+let pictureData // ตัวแปรเก็บค่าที่ได้จาก การดึง API เป็น array
 
 async function getPhotos(){
     // อาจจะใช้ try ก็ได้
@@ -19,7 +19,7 @@ async function getPhotos(){
     // ทำการ ดึงข้อมูล API ปกติ
     const response = await fetch(apiUrl)
     pictureData = await response.json()
-    //console.log(pictureData)
+    console.log(pictureData)
     displayImage();
 }
 
@@ -44,12 +44,11 @@ function displayImage(){
 //เช็คการ scroll
 window.addEventListener("scroll",()=>{
     console.log(window.innerHeight)
-    //console.log(window.scrollY)
-    //console.log(document.body.offsetHeight-100)
-    //console.log(window.innerWidth)
+    console.log(window.scrollY)
+    console.log(document.body.offsetHeight-100)
     // window.innerHeight ความสูงของ window คงที่
-    // window.scrollY ขนาด scrollY เพิ่มขึ้นเรื่อยๆดักจับระยะ
-    // document.body.offsetHeight ความสูงของbody ขณะนั้น
+    //window.scrollY ขนาด scrollY เพิ่มขึ้นเรื่อยๆดักจับระยะ
+    // document.body.offsetHeight ความสูงของ body ขณะนั้น
     if(window.innerHeight + window.scrollY >= document.body.offsetHeight-100){
         //ดึงภาพมาแสดงผลในเว็บบราวเซอร์
         getPhotos()
