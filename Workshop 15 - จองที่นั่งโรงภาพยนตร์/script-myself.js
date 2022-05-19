@@ -3,6 +3,7 @@ const containerEl = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat:not(.choosed)")
 //console.log([...seats])
 
+// เข้าถึงค่า element
 const countEl = document.getElementById("count")
 const totalEl = document.getElementById("total")
 const movieEl = document.getElementById("movie")
@@ -24,14 +25,14 @@ function updateOrder(){
     totalEl.innerText = amountSeat*price
 }
 
-//ฟังชันก์เก็บค่า ลำดับของหนัก และราคาของหนัง
+//ฟังชันก์เก็บค่า ลำดับของชื่อหนัง และราคาของหนัง
 function keepInfoMovie(indexMovie,priceMovie){
     //console.log(indexMovie,priceMovie)
     localStorage.setItem("indexMovie",indexMovie)
     localStorage.setItem("priceMovie",priceMovie)
 }
 
-// ฟังชันก์ในการแสดงผลเมื่อมีข้อมูลอยู่ใน localStorage แล้ว จะรีเซ็ตบราวเซอร์ข้อมูลก็ยังอยู่
+// ฟังชันก์ในการแสดงผลเมื่อมีข้อมูลอยู่ใน localStorage เท่านั้น ถึงแม้จะรีเซ็ตบราวเซอร์ข้อมูลก็ยังอยู่
 function displayUI(){
     const numSelectedSeat = JSON.parse(localStorage.getItem("numSelectedSeat"))
     const indexSeat = localStorage.getItem("indexMovie")
@@ -43,12 +44,8 @@ function displayUI(){
             element.classList.add("selected")
         }
     })
-    if (indexSeat != null){
-        movieEl.selectedIndex = indexSeat   
-    }
-    if (priceMovie != null){
-        price = priceMovie     
-    }
+    movieEl.selectedIndex = indexSeat   
+    price = priceMovie     
     updateOrder()
 }
 
@@ -72,7 +69,6 @@ movieEl.addEventListener("change",event=>{
     //อัพเดทสถานะที่นั่งและราคา
     updateOrder()   
 })
-
 
 
 // เริ่มต้นทำการเช็คว่าใน localStorage มีข้อมูลดังนี้ไหม
