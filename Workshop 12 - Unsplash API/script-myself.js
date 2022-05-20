@@ -19,7 +19,7 @@ async function getPhotos(){
     // ทำการ ดึงข้อมูล API ปกติ
     const response = await fetch(apiUrl)
     pictureData = await response.json()
-    console.log(pictureData)
+    //console.log(pictureData)
     displayImage();
 }
 
@@ -43,9 +43,9 @@ function displayImage(){
 
 //เช็คการ scroll
 window.addEventListener("scroll",()=>{
-    console.log(window.innerHeight)
-    console.log(window.scrollY)
-    console.log(document.body.offsetHeight-100)
+    //console.log(window.innerHeight)
+    //console.log(window.scrollY)
+    //console.log(document.body.offsetHeight-100)
     // window.innerHeight ความสูงของ window คงที่
     //window.scrollY ขนาด scrollY เพิ่มขึ้นเรื่อยๆดักจับระยะ
     // document.body.offsetHeight ความสูงของ body ขณะนั้น
