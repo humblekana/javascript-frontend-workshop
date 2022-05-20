@@ -137,10 +137,14 @@ button:active , input[type="submit"]:active{
     max-width: 400px;
     width: 100%;
     /* มีการกำหนด animation */
-    animation: fadeModal 1s ease;
+    animation: fadeModal 1s ease paused;
     
 }
 /* ใช้ร่วมกับ javascript ในการเปิดปิด modal */
+
+.modal-container.show-modal .modal{
+    animation-play-state: running;
+}
 .modal-container.show-modal{
     display: block;
 }
