@@ -1,5 +1,6 @@
 // ตัวแปรเก็บค่าข้อมูล api ต่างๆ
 const apikey = "6547ecb335a722e39bf8c0036269d0f4"
+// ค่าปีเริ่มต้น
 let year = 2022
 //ตัวแปรเก็บ url เพื่อดึงข้อมูล
 let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&language=en-US&sort_by=popularity.desc&page=1&year=${year}`
@@ -7,7 +8,7 @@ let url = `https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&languag
 const urlPoster = `https://image.tmdb.org/t/p/w500`
 
 
-//ตัวแปรอ้างอิงตาม html
+//ตัวแปรดึงค่า element
 const contentEl = document.getElementById("content")
 const yearsEl = document.getElementById("years")
 
@@ -24,18 +25,19 @@ yearsEl.addEventListener("change",(event)=>{
 async function displayMovie(url){
     const response = await fetch(url)
     const datas = await response.json()
-    //console.log(datas.results)
+    console.log(datas.results)
     // ทำการเช็คว่าเมื่อถ้ามีโหนดลูก ให้ลบให้หมด เหมือนการ reset
     //console.log(contentEl.firstElementChild)
     while(contentEl.childElementCount > 0){
-       contentEl.removeChild(contentEl.firstChild)
+        contentEl.removeChild(contentEl.firstChild)
     }
     //ทำการวนแต่ละรอบตามข้อมูลที่ดึงมาได้เพื่อนำข้อมูลหนังมาแสดง
     datas.results.forEach(e=>{
         //console.log(e)
         const divEl = document.createElement("div")
-        //แอด class movie ลงไป
+        //ทำการเพิ่ม class movie ลงไป เป็น class ที่ได้ตกแต่งจาก css
         divEl.classList.add("movie")
+        // ทำการเพิ่มค่า ใส่ข้อมูลปกติ
         const titelEl = document.createElement("h2")
         const imgEl = document.createElement("img")
         imgEl.src = `${urlPoster}${e.poster_path}`
