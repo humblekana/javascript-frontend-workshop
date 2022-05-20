@@ -3,7 +3,9 @@ const categoryEl = document.querySelectorAll(".category")
 // เมื่อ window มีการ scroll
 window.addEventListener("scroll",(event)=>{
     // ความสูงของ window ซึ่งคงที่
-    //console.log("window hight",window.innerHeight-500)
+    //console.log(window.innerHeight-500)
+    //console.log(document.body.offsetHeight)
+    //console.log(window.scrollY)
     
     //ทำการ for loop เพื่อเช็คค่า ค่าที่ได้จาก xxx..getBoundingClientRect().top
     // ซึ่งค่าที่ได้จะมีค่าเปรียบเสมือนพื้นที่มีค่าจากจุดสูงสุดน้อยลงจะเห็นภาพเมื่อ console.log
