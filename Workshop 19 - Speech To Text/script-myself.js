@@ -13,11 +13,11 @@ function setUpVoice(){
     //console.log(recognize)
     //recognize รองรับหลายภาษา ทำการกำหนดภาษา
     recognize.lang = "th-TH"
-    // event เมื่อคลิ๊กแล้วให้เรียกฟังชันก์
+    // ใส่ event เมื่อคลิ๊กแล้วให้เรียกฟังชันก์
     button.onclick = checkRecord
-    // event ในการรับเสียง เมื่อมีเสียงมาจะนำไปประมวลผล
+    // ใส่ event ในการรับเสียง เมื่อมีเสียงมาจะนำไปประมวลผล
     recognize.addEventListener("result",setVoicetoText)
-    // ถ้าหากว่าพูดจบประโยค ใช้ event นี้ 
+    // ใส่ event ถ้าหากว่าพูดจบประโยค ใช้ event นี้ 
     recognize.addEventListener("end",continueRecord)
 }
 
@@ -43,7 +43,8 @@ function checkRecord(event){
 
 //ฟังชันก์ในการนำค่าที่ได้จากการพูดมา
 function setVoicetoText(event){
-    const text = event.results[0]["0"].transcript
+    //console.log(event)
+    const text = event.results["0"]["0"].transcript
     textEl = textEl +" "+ text
     //console.log(textEl)
     document.querySelector(".message").innerText = textEl
