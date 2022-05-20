@@ -9,8 +9,8 @@ body{
     justify-content: center;
     align-items: center;   
     overflow: hidden; 
-    
 }
+
 /* ส่วน container */
 .container{
     display: flex;
@@ -19,7 +19,7 @@ body{
 
 /* ส่วนของแต่ละ item */
 .item{
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
@@ -28,9 +28,7 @@ body{
     cursor: pointer;
     flex: 1;
     opacity: 0.75;
-    transition-property: flex-grow,opacity;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition: flex-grow 0.8s ease ,opacity 0.8s ease;
 }
 .item.active{
     flex-grow: 10;
@@ -45,9 +43,8 @@ body{
     width: 70%;
     margin: 20px auto;
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
+    transition: opacity 0.5s ease;
+    
 }
 .item.item.active h3{
     opacity: 1;
