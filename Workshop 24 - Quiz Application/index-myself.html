@@ -8,29 +8,32 @@
     <link rel="stylesheet" href="style-myself.css">
 </head>
 <body>
+    <!-- ภายใน container -->
     <div class="container">
+        <!-- ส่วนคำถามแต่ละข้อ -->
         <div class="question-header">
             <h2 id="question">คำถาม</h2>
             <ul>
                 <li>
-                    <input type="radio" name="answer" id="a" class="answer">
+                    <input type="radio" name="answer" id="a" value="a" class="answer">
                     <label for="a" id="a-text">A.</label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="b" class="answer">
+                    <input type="radio" name="answer" id="b" value="b" class="answer">
                     <label for="b" id="b-text">B.</label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="c" class="answer">
+                    <input type="radio" name="answer" id="c" value="c" class="answer">
                     <label for="c" id="c-text">C.</label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="d" class="answer">
+                    <input type="radio" name="answer" id="d" value="d" class="answer">
                     <label for="d" id="d-text">D.</label>
                 </li>
             </ul>  
             <button id="submit">ส่งคำตอบ</button>  
         </div>
+        <!-- ส่วนแสดงผลคะแนน -->
         <div id="result" hidden>
             <h1>คะแนนของคุณคือ</h1>
         </div>

@@ -34,7 +34,7 @@ const questionData = [
     }
 ]
 
-// ดึงค่าตัวแปรต่างๆ
+// ดึงค่า element ต่างๆ 
 const questionEl = document.getElementById("question")
 const answerEl = document.querySelectorAll(".answer")
 const choiceA = document.getElementById("a-text")
@@ -71,7 +71,7 @@ function clearRadio(){
     answerEl.forEach((answer)=>answer.checked = false)
     /* answerEl.forEach((answer)=>{
         console.log(answer.checked)
-    })  */
+    }) */
 }
 
 // ทำการใส่ event ถ้าหาก click ปุ่ม
@@ -79,7 +79,7 @@ submitEl.addEventListener("click",()=>{
     //ทำการวนลูปเพื่อเช็คว่าเลือกคำตอบตัวไหน ดึงเอา id มาเก็บใน result
     answerEl.forEach((answer)=>{
         if (answer.checked == true){
-            result = answer.id
+            result = answer.value
         }
     }) 
     // ถ้าไม่มีการเลือกคำตอบ แสดงว่า result = undefined
@@ -101,13 +101,14 @@ submitEl.addEventListener("click",()=>{
             resultEl.hidden = false
             resultEl.children[0].innerText = `คะแนนของคุณคือ ${score} คะแนน จาก ${questionData.length}`
         }
+        // ทำการ reset ค่า result 
+        result = undefined
     }
-    console.log(resultEl.children[0])
-    /* console.log(score)
+    /* console.log(resultEl.children[0])
+    console.log(score)
     console.log(index)
     console.log(result) */
 })
 
-
-//เริ่มต้นเรียกบราวเซอร์
+//เรียกฟังชันก์แสดงผลเริ่มต้น
 displayQuestion()
