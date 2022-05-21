@@ -33,9 +33,7 @@ img{
     display: flex;
     /* จุดสำคัญทำงานร่วมกับ javascript เพื่อให้ภาพสามารถเลื่อนได้ */
     transform: translateX(0);
-    transition-property: transform;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in;
+    transition: transform 1s ease-in;
 }
 
 /* ส่วน block ปุ่ม */

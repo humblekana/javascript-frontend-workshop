@@ -8,7 +8,7 @@ const nextEl = document.getElementById("next")
 let indexPicture = 0
 
 // ตัวแปรเริ่มนับให้ภาพเลื่อนอัตโนมัต
-let countTime = setInterval(slidePicture,3000)
+let countTime = setInterval(slidePicture,5000)
 
 //ฟังชันก์ร่วมกับ setInterval ภาพเลื่อนอัตโนมัต
 function slidePicture(){
@@ -33,7 +33,6 @@ function changeImg(){
 // ฟังชันก์ในการ clearInterval 
 function clearSetinterval(){
     clearInterval(countTime)
-    
 }
 
 // ถ้ากด prev
@@ -45,7 +44,7 @@ prevEl.addEventListener("click",(event)=>{
     //เปลี่ยนแปลงรูป
     changeImg()
     //นับใหม่
-    countTime = setInterval(slidePicture,2000)
+    countTime = setInterval(slidePicture,5000)
 })
 
 // ถ้ากด next
@@ -57,5 +56,5 @@ nextEl.addEventListener("click",(event)=>{
     //เปลี่ยนแปลงรูป
     changeImg()
     //นับใหม่
-    countTime = setInterval(slidePicture,2000)
+    countTime = setInterval(slidePicture,5000)
 })
