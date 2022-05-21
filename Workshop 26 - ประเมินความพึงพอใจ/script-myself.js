@@ -11,6 +11,7 @@ let selectText
 rating_containerEl.addEventListener("click",(event)=>{
     // ทำการเคลียค่า
     clearActive()
+    //console.log(event.target)
     // ทำการเช็คว่าคลิ๊กตรงส่วนไหน
     // ถ้าคลิ๊กแล้วได้ส่วน parent เป็น class rating
     if (event.target.parentNode.classList.contains("rating")){
@@ -47,7 +48,7 @@ submitEl.addEventListener("click",(event)=>{
         panelEl.innerHTML = `
             <img src="./image/heart.svg" alt="" width="80px" hight="60px">
             <h4>การประเมินของคุณเสร็จสมบูรณ์</h4>
-            <p>ผลการประเมินของคุณ <b>${selectText}</b></p>
+            <p style="margin-top: 0;">ผลการประเมินของคุณ <b>${selectText}</b></p>
         `   
     }
     

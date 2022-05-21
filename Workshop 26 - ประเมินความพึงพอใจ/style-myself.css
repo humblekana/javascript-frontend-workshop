@@ -29,7 +29,7 @@ body{
 
 /* ส่วนหัวข้อ */
 .container strong{
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
 }
 
 /* ส่วน rating  ทุกตัว */
@@ -60,7 +60,7 @@ body{
 }
 /* ถ้าหากมีการนำเมาส์มาวาง และ ใส่คลาส active ทำร่วมกับ javascript */
 .rating:hover , .rating.active{
-    box-shadow: 0 0 5px rgb(0, 0, 0,0.5);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0,0.5);
 }
 
 /* ปุ่ม */
@@ -72,10 +72,10 @@ body{
     background-color: orangered;
     color: rgb(255, 255, 255);
     border-radius: 10px;
-    width: 50%;
+    width: 55%;
     cursor: pointer;
     
 }
 .btn:active{
-    transform: scale(0.98);    
+    transform: scale(0.95);    
 }
