@@ -14,7 +14,7 @@ body{
     position: relative;
     height: 100vh;
     /* สำคัญ ถ้าหากงง ให้ปิด comment ดู */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* ส่วน left-container */
@@ -26,9 +26,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    transition-property: transform;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+    transition: transform 1s ease;
 }
 .left-content div{
     /* border: 1px solid black; */
@@ -56,9 +54,7 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-    transition-property: transform;
-    transition-duration: 1s;
-    transition-timing-function: ease;
+    transition: transform 1s ease;
 }
 .right-content div{
     background-repeat: no-repeat;
@@ -69,14 +65,18 @@ body{
     object-fit: cover;
 }
 
-/* ส่วนของปุ่ม */
-.slider-container .action-button button{
+/* ส่วนของปุ่มบน */
+.slider-container .action-button .up-button{
+    position: absolute;
+    top: 43.5%;
+    left: 40%;
+    font-size: 1.5rem;
+}
+/* ส่วนของปุ่มล่าง */
+.slider-container .action-button .down-button{
     position: absolute;
     top: 40%;
     left: 40%;
     font-size: 1.5rem;
-}
-.slider-container .action-button .down-button{
-    position: absolute;
     transform: translate(-100%);    
 }
