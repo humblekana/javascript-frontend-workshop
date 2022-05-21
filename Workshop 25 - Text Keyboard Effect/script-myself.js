@@ -2,7 +2,7 @@
 const textEl = document.getElementById("text")
 const speedEl = document.getElementById("speed")
 
-const text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่เว็บไซต์"
+const text = "คะน้าหล่อที่สุดในโลก"
 // ตัวแปรเก็บความเร็วในการพิมพ์
 let speed = 300 / parseInt(speedEl.value)
 
