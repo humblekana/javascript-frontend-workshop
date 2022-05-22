@@ -9,18 +9,16 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
 }
+
 /* container */
 .container{
     background-image: linear-gradient(270deg, rgba(98, 176, 254, 1) 1%, rgba(255, 82, 168, 1) 100%);;    
     max-width: 700px;
     width: 100%;
     border-radius: 20px;
-    margin: 0 auto;
     padding: 50px 70px;
     position: relative;
-
 }
 
 /* ส่วน progress-bar */
@@ -30,10 +28,7 @@ body{
     width: 100%;
     /* ทำให้เริ่มต้นด้านซ้าย */
     transform-origin: left;
-    animation-name: loading;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: loading 3s linear infinite running;
 }
 
 /* ทำ animation */

@@ -1,10 +1,10 @@
 // object ไว้เปลี่ยนการ review
 const userdata = [
     {
-        name:"พิมลี่พลอย",
-        job:"พนักงานประจำ",
-        text:"อากาศดี อาหารอร่อย ห้องพักสะอาดมาก",
-        image:"https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg"
+        name:"ชัยพร",
+        job:"พนักงานบริการ",
+        text:"อากาศดี พนักงานต้อนรับได้ดี บริการรวดเร็ว อาหารธรรมดา ราคาแพงมาก",
+        image:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
     },
     {
         name:"ก้อง รักสยาม",
@@ -40,7 +40,7 @@ const user_nameEl = document.querySelector(".user-name")
 const user_jobEl = document.querySelector(".user-job")
 
 // index ข้อมูล
-let index = 0
+let index = 1
 
 // ฟังชันก์ในการแสดงผล เมื่อถึงเวลา
 function displayReview(){
@@ -61,4 +61,4 @@ function displayReview(){
 }
 
 // เรียกฟังชันก์ทุกๆ 2 วินาที
-setInterval(displayReview,2000)
+setInterval(displayReview,3000)
