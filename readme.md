@@ -1,5 +1,5 @@
-# javascript-frontend-workshop
-#### workshop javascript เป็นการฝึกทำ workshop ต้องมีพื้นฐานเกี่ยวกับ html css javascript ซึ่งจะเน้นไปทาง css และ javascript ส่วนใหญ่
+# Javascript-Frontend-Workshop
+workshop javascript เป็นการฝึกทำ workshop ต้องมีพื้นฐานเกี่ยวกับ html css javascript
 
 ### workshop 1-30
 - index-myself.html
